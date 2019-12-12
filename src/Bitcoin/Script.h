@@ -9,6 +9,7 @@
 #include "../Data.h"
 
 #include <TrustWalletCore/TWBitcoinOpCodes.h>
+#include <TrustWalletCore/TWCoinType.h>
 
 #include <string>
 #include <vector>
@@ -69,6 +70,9 @@ class Script {
     /// Builds a pay-to-script-hash (P2SH) script from a script hash.
     static Script buildPayToScriptHash(const Data& scriptHash);
 
+    /// Builds a pay-to-witness-program script, P2WSH or P2WPKH.
+    static Script buildPayToWitnessProgram(const Data& program);
+
     /// Builds a pay-to-witness-public-key-hash (P2WPKH) script from a public
     /// key hash.
     static Script buildPayToWitnessPubkeyHash(const Data& hash);
@@ -78,7 +82,7 @@ class Script {
 
     /// Builds a pay-to-public-key-hash (P2PKH) script appropriate for the given
     /// address.
-    static Script buildForAddress(const std::string& address);
+    static Script buildForAddress(const std::string& address, enum TWCoinType coin);
 
     /// Encodes the script.
     void encode(Data& data) const;

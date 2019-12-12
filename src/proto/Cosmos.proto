@@ -20,6 +20,8 @@ message SendCoinsMessage {
     string from_address = 1;
     string to_address = 2;
     repeated Amount amounts = 3;
+    // default is cosmos-sdk/MsgSend
+    string type_prefix = 4;
 }
 
 // Message for staking.
@@ -27,6 +29,32 @@ message StakeMessage {
     string delegator_address = 1;
     string validator_address = 2;
     Amount amount = 3;
+    // cosmos-sdk/MsgDelegate to stake and cosmos-sdk/MsgUndelegate to unstake
+    string type_prefix = 4;
+}
+
+// Message for restaking.
+message ReStakeMessage {
+    string delegator_address = 1;
+    string validator_src_address = 2;
+    string validator_dst_address = 3;
+    Amount amount = 4;
+    // cosmos-sdk/MsgBeginRedelegate
+    string type_prefix = 5;
+}
+
+// Message for staking.
+message WithdrawStakeRewardMessage {
+    string delegator_address = 1;
+    string validator_address = 2;
+    // default is cosmos-sdk/MsgWithdrawDelegationReward
+    string type_prefix = 3;
+}
+
+message WithdrawStakeRewardsAllMessage {
+    string delegator_address = 1;
+    // cosmos-sdk/MsgWithdrawDelegationRewardsAll
+    string type_prefix = 2;
 }
 
 // Signature
@@ -44,7 +72,11 @@ message Transaction {
     oneof message_oneof {
         SendCoinsMessage send_coins_message = 4;
         StakeMessage stake_message = 5;
-    }    
+        StakeMessage unstake_message = 6;
+        ReStakeMessage restake_message = 7;
+        WithdrawStakeRewardMessage withdraw_stake_reward_message = 8;
+        WithdrawStakeRewardsAllMessage withdraw_stake_rewards_all_message = 9;
+    }
 }
 
 // Input data necessary to create a signed order.
@@ -60,13 +92,19 @@ message SigningInput {
     oneof message_oneof {
         SendCoinsMessage send_coins_message = 7;
         StakeMessage stake_message = 8;
+        StakeMessage unstake_message = 9;
+        ReStakeMessage restake_message = 10;
+        WithdrawStakeRewardMessage withdraw_stake_reward_message = 11;
+        WithdrawStakeRewardsAllMessage withdraw_stake_rewards_all_message = 12;
     }
+    // default is cosmos-sdk/MsgSend
+    string type_prefix = 20;
 }
 
 // Transaction signing output.
 message SigningOutput {
-    // Signed and encoded transaction bytes.
-    bytes encoded = 1;
+    // Signature
+    bytes signature = 1;
     // Signed transaction in JSON.
     string json = 2;
 }

@@ -19,8 +19,6 @@
 #include <TrezorCrypto/bip39.h>
 #include <TrezorCrypto/curves.h>
 #include <TrustWalletCore/TWHRP.h>
-#include <TrustWalletCore/TWP2PKHPrefix.h>
-#include <TrustWalletCore/TWP2SHPrefix.h>
 
 #include <array>
 
@@ -68,6 +66,12 @@ HDWallet::~HDWallet() {
     std::fill(passphrase.begin(), passphrase.end(), 0);
 }
 
+PrivateKey HDWallet::getMasterKey(TWCurve curve) const {
+    auto node = getMasterNode(*this, curve);
+    auto data = Data(node.private_key, node.private_key + PrivateKey::size);
+    return PrivateKey(data);
+}
+
 PrivateKey HDWallet::getKey(const DerivationPath& derivationPath) const {
     const auto curve = TWCoinTypeCurve(derivationPath.coin());
     auto node = getNode(*this, curve, derivationPath);
@@ -81,6 +85,10 @@ std::string HDWallet::deriveAddress(TWCoinType coin) const {
 }
 
 std::string HDWallet::getExtendedPrivateKey(TWPurpose purpose, TWCoinType coin, TWHDVersion version) const {
+    if (version == TWHDVersionNone) {
+        return "";
+    }
+    
     const auto curve = TWCoinTypeCurve(coin);
     auto derivationPath = TW::DerivationPath({DerivationPathIndex(purpose, true), DerivationPathIndex(coin, true)});
     auto node = getNode(*this, curve, derivationPath);
@@ -90,6 +98,10 @@ std::string HDWallet::getExtendedPrivateKey(TWPurpose purpose, TWCoinType coin, 
 }
 
 std::string HDWallet::getExtendedPublicKey(TWPurpose purpose, TWCoinType coin, TWHDVersion version) const {
+    if (version == TWHDVersionNone) {
+        return "";
+    }
+    
     const auto curve = TWCoinTypeCurve(coin);
     auto derivationPath = TW::DerivationPath({DerivationPathIndex(purpose, true), DerivationPathIndex(coin, true)});
     auto node = getNode(*this, curve, derivationPath);
@@ -119,6 +131,8 @@ std::optional<PublicKey> HDWallet::getPublicKeyFromExtended(const std::string &e
         return PublicKey(Data(node.public_key, node.public_key + 33), TWPublicKeyTypeED25519);
     case TWCurveED25519Blake2bNano:
         return PublicKey(Data(node.public_key, node.public_key + 33), TWPublicKeyTypeED25519Blake2b);
+    case TWCurveCurve25519:
+        return PublicKey(Data(node.public_key, node.public_key + 32), TWPublicKeyTypeCURVE25519);
     case TWCurveNIST256p1:
         return PublicKey(Data(node.public_key, node.public_key + 33), TWPublicKeyTypeNIST256p1);
     }

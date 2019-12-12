@@ -8,28 +8,32 @@
 
 #include "../Cosmos/Address.h"
 #include "../Base64.h"
-#include <TrustWalletCore/TWHRP.h>
 
 using namespace TW;
 using namespace TW::Cosmos;
 using namespace TW::Cosmos::Proto;
 
 using json = nlohmann::json;
+using string = std::string;
 
-const static std::string AMINO_PREFIX_SEND_COIN_MESSAGE = "cosmos-sdk/MsgSend";
-const static std::string AMINO_PREFIX_STAKE_MESSAGE = "cosmos-sdk/MsgDelegate";
-const static std::string AMINO_PREFIX_TRANSACTION = "auth/StdTx";
-const static std::string AMINO_PREFIX_PUBLIC_KEY = "tendermint/PubKeySecp256k1";
+const string TYPE_PREFIX_MSG_SEND = "cosmos-sdk/MsgSend";
+const string TYPE_PREFIX_MSG_DELEGATE = "cosmos-sdk/MsgDelegate";
+const string TYPE_PREFIX_MSG_UNDELEGATE = "cosmos-sdk/MsgUndelegate";
+const string TYPE_PREFIX_MSG_REDELEGATE = "cosmos-sdk/MsgBeginRedelegate";
+const string TYPE_PREFIX_MSG_WITHDRAW_REWARD = "cosmos-sdk/MsgWithdrawDelegationReward";
+const string TYPE_PREFIX_MSG_WITHDRAW_REWARDS_ALL = "cosmos-sdk/MsgWithdrawDelegationRewardsAll";
+const string TYPE_PREFIX_PUBLIC_KEY = "tendermint/PubKeySecp256k1";
 
-json higherWrapperJSON(json& jsonObj) {
+static json broadcastJSON(json& jsonObj) {
     json jsonMsgWrapper;
 
     jsonMsgWrapper["tx"] = jsonObj;
+    jsonMsgWrapper["mode"] = "block";
 
     return jsonMsgWrapper;
 }
 
-json wrapperJSON(const std::string& type, json& jsonObj) {
+static json wrapperJSON(const string& type, json& jsonObj) {
     json jsonMsgWrapper;
 
     jsonMsgWrapper["type"] = type;
@@ -38,7 +42,7 @@ json wrapperJSON(const std::string& type, json& jsonObj) {
     return jsonMsgWrapper;
 }
 
-json amountJSON(std::string amount, std::string denom) {
+static json amountJSON(const string& amount, const string& denom) {
     json jsonAmount;
 
     jsonAmount["amount"] = amount;
@@ -47,7 +51,7 @@ json amountJSON(std::string amount, std::string denom) {
     return jsonAmount;
 }
 
-json feeJSON(const Fee& fee) {
+static json feeJSON(const Fee& fee) {
     json jsonAmounts = json::array();
 
     for (auto& amount : fee.amounts()) {
@@ -63,67 +67,129 @@ json feeJSON(const Fee& fee) {
     return jsonFee;
 }
 
-json sendCoinsMessageJSON(json& amounts, std::string from_address, std::string to_address) {
+static json sendCoinsMessage(json& amounts, const string& from_address, const string& to_address, const string& type_prefix) {
     json jsonMsg;
 
     jsonMsg["amount"] = amounts;
     jsonMsg["from_address"] = from_address;
     jsonMsg["to_address"] = to_address;
 
-    return wrapperJSON(AMINO_PREFIX_SEND_COIN_MESSAGE, jsonMsg);
+    return wrapperJSON(type_prefix, jsonMsg);
 }
 
-json stakeMessageJSON(json& amount, std::string delegator_address, std::string validator_address) {
+static json stakeMessage(json& amount, const string& delegator_address, const string& validator_address, const string& type_prefix) {
     json jsonMsg;
 
     jsonMsg["amount"] = amount;
     jsonMsg["delegator_address"] = delegator_address;
     jsonMsg["validator_address"] = validator_address;
 
-    return wrapperJSON(AMINO_PREFIX_STAKE_MESSAGE, jsonMsg);
+    return wrapperJSON(type_prefix, jsonMsg);
 }
 
-json sendCoinsMessageJSON(const SendCoinsMessage& message) {
+static json restakeMessage(json& amount, const string& delegator_address, const string& validator_src_address, const string& validator_dst_address, const string& type_prefix) {
+    json jsonMsg;
+
+    jsonMsg["amount"] = amount;
+    jsonMsg["delegator_address"] = delegator_address;
+    jsonMsg["validator_src_address"] = validator_src_address;
+    jsonMsg["validator_dst_address"] = validator_dst_address;
+
+    return wrapperJSON(type_prefix, jsonMsg);
+}
+
+static json withdrawStakeRewardMessage(const string& delegator_address, const string& validator_address, const string& type_prefix) {
+    json jsonMsg;
+
+    jsonMsg["delegator_address"] = delegator_address;
+    jsonMsg["validator_address"] = validator_address;
+
+    return wrapperJSON(type_prefix, jsonMsg);
+}
+
+static json withdrawStakeRewardsAllMessage(const string& delegator_address, const string& type_prefix) {
+    json jsonMsg;
+
+    jsonMsg["delegator_address"] = delegator_address;
+
+    return wrapperJSON(type_prefix, jsonMsg);
+}
+
+static json sendCoinsMessage(const SendCoinsMessage& message) {
     json jsonAmounts = json::array();
 
     for (auto& amount : message.amounts()) {
         jsonAmounts.push_back(amountJSON(std::to_string(amount.amount()), amount.denom()));
     }
 
-    return sendCoinsMessageJSON(jsonAmounts, message.from_address(), message.to_address());
+    return sendCoinsMessage(jsonAmounts, message.from_address(), message.to_address(), message.type_prefix());
 }
 
-json stakeMessageJSON(const StakeMessage& message) {
+
+static json stakeMessage(const StakeMessage& message) {
     auto amount = message.amount();
     json jsonAmount = amountJSON(std::to_string(amount.amount()), amount.denom());
 
-    return stakeMessageJSON(jsonAmount, message.delegator_address(), message.validator_address());
+    return stakeMessage(jsonAmount, message.delegator_address(), message.validator_address(), message.type_prefix());
 }
 
-json messageJSON(const SigningInput& input) {
+static json restakeMessage(const ReStakeMessage& message) {
+    auto amount = message.amount();
+    json jsonAmount = amountJSON(std::to_string(amount.amount()), amount.denom());
+
+    return restakeMessage(jsonAmount, message.delegator_address(), message.validator_src_address(),
+            message.validator_dst_address(), message.type_prefix());
+}
+
+
+static json withdrawStakeRewardMessage(const WithdrawStakeRewardMessage& message) {
+    return withdrawStakeRewardMessage(message.delegator_address(), message.validator_address(), message.type_prefix());
+}
+
+static json withdrawStakeRewardsAllMessage(const WithdrawStakeRewardsAllMessage& message) {
+    return withdrawStakeRewardsAllMessage(message.delegator_address(), message.type_prefix());
+}
+
+static json messageJSON(const SigningInput& input) {
     if (input.has_send_coins_message()) {
-        return sendCoinsMessageJSON(input.send_coins_message());
+        return sendCoinsMessage(input.send_coins_message());
     } else if (input.has_stake_message()) {
-        return stakeMessageJSON(input.stake_message());
+        return stakeMessage(input.stake_message());
+    } else if (input.has_unstake_message()) {
+        return stakeMessage(input.unstake_message());
+    } else if (input.has_restake_message()) {
+        return restakeMessage(input.restake_message());
+    } else if (input.has_withdraw_stake_reward_message()) {
+        return withdrawStakeRewardMessage(input.withdraw_stake_reward_message());
+    } else if (input.has_withdraw_stake_rewards_all_message()) {
+        return withdrawStakeRewardsAllMessage(input.withdraw_stake_rewards_all_message());
     }
 
     return nullptr;
 }
 
-json messageJSON(const Transaction& transaction) {
+static json messageJSON(const Transaction& transaction) {
     if (transaction.has_send_coins_message()) {
-        return sendCoinsMessageJSON(transaction.send_coins_message());
+        return sendCoinsMessage(transaction.send_coins_message());
     } else if (transaction.has_stake_message()) {
-        return stakeMessageJSON(transaction.stake_message());
+        return stakeMessage(transaction.stake_message());
+    } else if (transaction.has_unstake_message()) {
+        return stakeMessage(transaction.unstake_message());
+    } else if (transaction.has_restake_message()) {
+        return restakeMessage(transaction.restake_message());
+    } else if (transaction.has_withdraw_stake_reward_message()) {
+        return withdrawStakeRewardMessage(transaction.withdraw_stake_reward_message());
+    } else if (transaction.has_withdraw_stake_rewards_all_message()) {
+        return withdrawStakeRewardsAllMessage(transaction.withdraw_stake_rewards_all_message());
     }
 
     return nullptr;
 }
 
-json signatureJSON(const Signature& signature) {
+static json signatureJSON(const Signature& signature) {
     json jsonSignature;
 
-    jsonSignature["pub_key"]["type"] = AMINO_PREFIX_PUBLIC_KEY;
+    jsonSignature["pub_key"]["type"] = TYPE_PREFIX_PUBLIC_KEY;
     jsonSignature["pub_key"]["value"] = Base64::encode(Data(signature.public_key().begin(), signature.public_key().end()));
     jsonSignature["signature"] = Base64::encode(Data(signature.signature().begin(), signature.signature().end()));
 
@@ -143,14 +209,14 @@ json TW::Cosmos::signaturePreimageJSON(const SigningInput& input) {
     return jsonForSigning;
 }
 
-json TW::Cosmos::transactionJSON(const Transaction& transaction) {
+json TW::Cosmos::transactionJSON(const Transaction& transaction, const string& type_prefix) {
     json jsonTx;
 
-    jsonTx["type"] = AMINO_PREFIX_SEND_COIN_MESSAGE;
+    jsonTx["type"] = type_prefix;
     jsonTx["fee"] = feeJSON(transaction.fee());
     jsonTx["memo"] = transaction.memo();
     jsonTx["msg"] = json::array({messageJSON(transaction)});
     jsonTx["signatures"] = json::array({signatureJSON(transaction.signature())});
 
-    return higherWrapperJSON(jsonTx);
+    return broadcastJSON(jsonTx);
 }

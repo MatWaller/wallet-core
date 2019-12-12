@@ -1,1 +1,0 @@
-/usr/bin/clang    CMakeFiles/TrezorCryptoTests.dir/test_check.c.o  -o TrezorCryptoTests  -L/home/indieblock/git/wallet-core/build/local/lib -Wl,-rpath,/home/indieblock/git/wallet-core/build/local/lib ../libTrezorCrypto.a -lcheck 

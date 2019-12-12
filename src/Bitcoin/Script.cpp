@@ -7,10 +7,14 @@
 #include "Script.h"
 
 #include "Address.h"
-#include "SegwitAddress.h"
 #include "CashAddress.h"
+#include "SegwitAddress.h"
+
+#include "../Base58.h"
+#include "../Coin.h"
 
 #include "../BinaryCoding.h"
+#include "../Data.h"
 #include "../Decred/Address.h"
 #include "../Groestlcoin/Address.h"
 #include "../Hash.h"
@@ -18,16 +22,16 @@
 #include "../Zcash/TAddress.h"
 
 #include <TrustWalletCore/TWBitcoinOpCodes.h>
-#include <TrustWalletCore/TWP2PKHPrefix.h>
-#include <TrustWalletCore/TWP2SHPrefix.h>
 
 #include <algorithm>
 #include <cassert>
+#include <set>
 
+using namespace TW;
 using namespace TW::Bitcoin;
 
-std::vector<uint8_t> Script::hash() const {
-    return TW::Hash::ripemd(TW::Hash::sha256(bytes));
+Data Script::hash() const {
+    return Hash::ripemd(Hash::sha256(bytes));
 }
 
 bool Script::isPayToScriptHash() const {
@@ -51,7 +55,7 @@ bool Script::isWitnessProgram() const {
     return bytes[1] + 2 == bytes.size();
 }
 
-bool Script::matchPayToPubkey(std::vector<uint8_t>& result) const {
+bool Script::matchPayToPubkey(Data& result) const {
     if (bytes.size() == PublicKey::secp256k1ExtendedSize + 2 &&
         bytes[0] == PublicKey::secp256k1ExtendedSize && bytes.back() == OP_CHECKSIG) {
         result.clear();
@@ -69,7 +73,7 @@ bool Script::matchPayToPubkey(std::vector<uint8_t>& result) const {
     return false;
 }
 
-bool Script::matchPayToPubkeyHash(std::vector<uint8_t>& result) const {
+bool Script::matchPayToPubkeyHash(Data& result) const {
     if (bytes.size() == 25 && bytes[0] == OP_DUP && bytes[1] == OP_HASH160 && bytes[2] == 20 &&
         bytes[23] == OP_EQUALVERIFY && bytes[24] == OP_CHECKSIG) {
         result.clear();
@@ -79,7 +83,7 @@ bool Script::matchPayToPubkeyHash(std::vector<uint8_t>& result) const {
     return false;
 }
 
-bool Script::matchPayToScriptHash(std::vector<uint8_t>& result) const {
+bool Script::matchPayToScriptHash(Data& result) const {
     if (!isPayToScriptHash()) {
         return false;
     }
@@ -88,7 +92,7 @@ bool Script::matchPayToScriptHash(std::vector<uint8_t>& result) const {
     return true;
 }
 
-bool Script::matchPayToWitnessPublicKeyHash(std::vector<uint8_t>& result) const {
+bool Script::matchPayToWitnessPublicKeyHash(Data& result) const {
     if (bytes.size() == 22 && bytes[0] == OP_0 && bytes[1] == 0x14) {
         result.clear();
         std::copy(std::begin(bytes) + 2, std::end(bytes), std::back_inserter(result));
@@ -97,7 +101,7 @@ bool Script::matchPayToWitnessPublicKeyHash(std::vector<uint8_t>& result) const 
     return false;
 }
 
-bool Script::matchPayToWitnessScriptHash(std::vector<uint8_t>& result) const {
+bool Script::matchPayToWitnessScriptHash(Data& result) const {
     if (bytes.size() == 34 && bytes[0] == OP_0 && bytes[1] == 0x20) {
         result.clear();
         std::copy(std::begin(bytes) + 2, std::end(bytes), std::back_inserter(result));
@@ -115,7 +119,7 @@ static inline int decodeNumber(uint8_t opcode) {
     return static_cast<int>(opcode) - static_cast<int>(OP_1 - 1);
 }
 
-bool Script::matchMultisig(std::vector<std::vector<uint8_t>>& keys, int& required) const {
+bool Script::matchMultisig(std::vector<Data>& keys, int& required) const {
     keys.clear();
     required = 0;
 
@@ -125,7 +129,7 @@ bool Script::matchMultisig(std::vector<std::vector<uint8_t>>& keys, int& require
 
     size_t it = 0;
     uint8_t opcode;
-    std::vector<uint8_t> operand;
+    Data operand;
 
     auto op = getScriptOp(it, opcode, operand);
     if (!op || !TWOpCodeIsSmallInteger(opcode)) {
@@ -137,7 +141,7 @@ bool Script::matchMultisig(std::vector<std::vector<uint8_t>>& keys, int& require
         if (!res) {
             break;
         }
-        if (!TW::PublicKey::isValid(operand, TWPublicKeyTypeSECP256k1)) {
+        if (!PublicKey::isValid(operand, TWPublicKeyTypeSECP256k1)) {
             break;
         }
         keys.push_back(operand);
@@ -158,7 +162,7 @@ bool Script::matchMultisig(std::vector<std::vector<uint8_t>>& keys, int& require
     return true;
 }
 
-bool Script::getScriptOp(size_t& index, uint8_t& opcode, std::vector<uint8_t>& operand) const {
+bool Script::getScriptOp(size_t& index, uint8_t& opcode, Data& operand) const {
     operand.clear();
 
     // Read instruction
@@ -199,13 +203,13 @@ bool Script::getScriptOp(size_t& index, uint8_t& opcode, std::vector<uint8_t>& o
     if (bytes.size() - index < size) {
         return false;
     }
-    operand = std::vector<uint8_t>(bytes.begin() + index, bytes.begin() + index + size);
+    operand = Data(bytes.begin() + index, bytes.begin() + index + size);
     index += size;
 
     return true;
 }
 
-Script Script::buildPayToPublicKeyHash(const std::vector<uint8_t>& hash) {
+Script Script::buildPayToPublicKeyHash(const Data& hash) {
     assert(hash.size() == 20);
     Script script;
     script.bytes.push_back(OP_DUP);
@@ -217,7 +221,7 @@ Script Script::buildPayToPublicKeyHash(const std::vector<uint8_t>& hash) {
     return script;
 }
 
-Script Script::buildPayToScriptHash(const std::vector<uint8_t>& scriptHash) {
+Script Script::buildPayToScriptHash(const Data& scriptHash) {
     assert(scriptHash.size() == 20);
     Script script;
     script.bytes.push_back(OP_HASH160);
@@ -227,50 +231,42 @@ Script Script::buildPayToScriptHash(const std::vector<uint8_t>& scriptHash) {
     return script;
 }
 
-Script Script::buildPayToWitnessPubkeyHash(const std::vector<uint8_t>& hash) {
-    assert(hash.size() == 20);
+Script Script::buildPayToWitnessProgram(const Data& program) {
+    assert(program.size() == 20 || program.size() == 32);
     Script script;
     script.bytes.push_back(OP_0);
-    script.bytes.push_back(20);
-    script.bytes.insert(script.bytes.end(), hash.begin(), hash.end());
+    script.bytes.push_back(static_cast<byte>(program.size()));
+    script.bytes.insert(script.bytes.end(), program.begin(), program.end());
     return script;
 }
 
-Script Script::buildPayToWitnessScriptHash(const std::vector<uint8_t>& scriptHash) {
-    assert(scriptHash.size() == 32);
-    Script script;
-    script.bytes.push_back(OP_0);
-    script.bytes.push_back(32);
-    script.bytes.insert(script.bytes.end(), scriptHash.begin(), scriptHash.end());
-    return script;
+Script Script::buildPayToWitnessPubkeyHash(const Data& hash) {
+    return Script::buildPayToWitnessProgram(hash);
 }
 
-void Script::encode(std::vector<uint8_t>& data) const {
+Script Script::buildPayToWitnessScriptHash(const Data& scriptHash) {
+    return Script::buildPayToWitnessProgram(scriptHash);
+}
+
+void Script::encode(Data& data) const {
     encodeVarInt(bytes.size(), data);
     std::copy(std::begin(bytes), std::end(bytes), std::back_inserter(data));
 }
 
-Script Script::buildForAddress(const std::string& string) {
-    static const std::vector<uint8_t> p2pkhPrefixes = {TWP2PKHPrefixBitcoin, TWP2PKHPrefixIocoin, TWP2PKHPrefixLitecoin,
-                                                       TWP2PKHPrefixDash, TWP2PKHPrefixZcoin, TWP2PKHPrefixViacoin,
-                                                       TWP2PKHPrefixDogecoin, TWP2PKHPrefixQtum};
-    static const std::vector<uint8_t> p2shPrefixes = {TWP2SHPrefixBitcoin, TWP2SHPrefixIocoin, TWP2SHPrefixLitecoin,
-                                                      TWP2SHPrefixDash, TWP2SHPrefixZcoin, TWP2SHPrefixViacoin,
-                                                      TWP2SHPrefixDogecoin, TWP2SHPrefixLux};
+Script Script::buildForAddress(const std::string& string, enum TWCoinType coin) {
     if (Address::isValid(string)) {
         auto address = Address(string);
-        auto p2pkh = std::find(p2pkhPrefixes.begin(), p2pkhPrefixes.end(), address.bytes[0]);
-        if (p2pkh != p2pkhPrefixes.end()) {
+        auto p2pkh = TW::p2pkhPrefix(coin);
+        auto p2sh = TW::p2shPrefix(coin);
+        if (p2pkh == address.bytes[0]) {
             // address starts with 1/L
-            auto data = std::vector<uint8_t>();
+            auto data = Data();
             data.reserve(Address::size - 1);
             std::copy(address.bytes.begin() + 1, address.bytes.end(), std::back_inserter(data));
             return buildPayToPublicKeyHash(data);
-        }
-        auto p2sh = std::find(p2shPrefixes.begin(), p2shPrefixes.end(), address.bytes[0]);
-        if (p2sh != p2shPrefixes.end()) {
+        } else if (p2sh == address.bytes[0]) {
             // address starts with 3/M
-            auto data = std::vector<uint8_t>();
+            auto data = Data();
             data.reserve(Address::size - 1);
             std::copy(address.bytes.begin() + 1, address.bytes.end(), std::back_inserter(data));
             return buildPayToScriptHash(data);
@@ -279,34 +275,38 @@ Script Script::buildForAddress(const std::string& string) {
         auto result = SegwitAddress::decode(string);
         // address starts with bc/ltc
         auto program = result.first.witnessProgram;
-        return buildPayToWitnessPubkeyHash(program);
+        return buildPayToWitnessProgram(program);
     } else if (CashAddress::isValid(string)) {
         auto address = CashAddress(string);
         auto bitcoinAddress = address.legacyAddress();
-        return buildForAddress(bitcoinAddress.string());
+        return buildForAddress(bitcoinAddress.string(), TWCoinTypeBitcoinCash);
     } else if (Decred::Address::isValid(string)) {
-        auto address = Decred::Address(string);
-        return buildPayToPublicKeyHash(Data(address.keyhash.begin(), address.keyhash.end()));
+        auto bytes = Base58::bitcoin.decodeCheck(string, Hash::blake256d);
+        if (bytes[1] == TW::p2pkhPrefix(TWCoinTypeDecred)) {
+            return buildPayToPublicKeyHash(Data(bytes.begin() + 2, bytes.end()));
+        }
+        if (bytes[1] == TW::p2shPrefix(TWCoinTypeDecred)) {
+            return buildPayToScriptHash(Data(bytes.begin() + 2, bytes.end()));
+        }
     } else if (Groestlcoin::Address::isValid(string)) {
         auto address = Groestlcoin::Address(string);
-        auto data = std::vector<uint8_t>();
+        auto data = Data();
         data.reserve(Address::size - 1);
         std::copy(address.bytes.begin() + 1, address.bytes.end(), std::back_inserter(data));
-        if (address.bytes[0] == TWP2PKHPrefixGroestlcoin) {
+        if (address.bytes[0] == TW::p2pkhPrefix(TWCoinTypeGroestlcoin)) {
             return buildPayToPublicKeyHash(data);
         }
-        if (address.bytes[0] == TWP2SHPrefixGroestlcoin) {
+        if (address.bytes[0] == TW::p2shPrefix(TWCoinTypeGroestlcoin)) {
             return buildPayToScriptHash(data);
         }
     } else if (Zcash::TAddress::isValid(string)) {
         auto address = Zcash::TAddress(string);
-        auto prefix = address.bytes[1];
-        auto data = std::vector<uint8_t>();
+        auto data = Data();
         data.reserve(Address::size - 2);
         std::copy(address.bytes.begin() + 2, address.bytes.end(), std::back_inserter(data));
-        if (prefix == TWP2PKHPrefixZcashT) {
+        if (address.bytes[1] == TW::p2pkhPrefix(TWCoinTypeZcash)) {
             return buildPayToPublicKeyHash(data);
-        } else if (prefix == TWP2SHPrefixZcashT) {
+        } else if (address.bytes[1] == TW::p2shPrefix(TWCoinTypeZcash)) {
             return buildPayToScriptHash(data);
         }
     }

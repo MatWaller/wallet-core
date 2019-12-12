@@ -36,6 +36,9 @@ Data sha256(const byte* begin, const byte* end);
 /// Computes the SHA512 hash.
 Data sha512(const byte* begin, const byte* end);
 
+/// Computes the SHA512/256 hash.
+Data sha512_256(const byte* begin, const byte* end);
+
 /// Computes the Keccak SHA256 hash.
 Data keccak256(const byte* begin, const byte* end);
 
@@ -88,6 +91,13 @@ template <typename T>
 Data sha512(const T& data) {
     const auto begin = reinterpret_cast<const byte*>(data.data());
     return sha512(begin, begin + data.size());
+}
+
+/// Computes the SHA512/256 hash.
+template <typename T>
+Data sha512_256(const T& data) {
+    const auto begin = reinterpret_cast<const byte*>(data.data());
+    return sha512_256(begin, begin + data.size());
 }
 
 /// Computes the Keccak SHA256 hash.
@@ -160,6 +170,11 @@ inline Data sha256d(const byte* begin, const byte* end) {
 /// Computes the ripemd hash of the SHA256 hash.
 inline Data sha256ripemd(const byte* begin, const byte* end) {
     return ripemd(sha256(begin, end));
+}
+
+/// Computes the ripemd hash of the SHA256 hash.
+inline Data sha3_256ripemd(const byte* begin, const byte* end) {
+    return ripemd(sha3_256(begin, end));
 }
 
 /// Computes the Blake256 hash of the Blake256 hash.

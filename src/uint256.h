@@ -16,6 +16,7 @@ using int256_t = boost::multiprecision::int256_t;
 using uint256_t = boost::multiprecision::uint256_t;
 
 /// Loads a `uint256_t` from a collection of bytes.
+/// The rightmost bytes are taken from data
 inline uint256_t load(const Data& data) {
     using boost::multiprecision::cpp_int;
     if (data.empty()) {
@@ -23,6 +24,19 @@ inline uint256_t load(const Data& data) {
     }
     uint256_t result;
     import_bits(result, data.begin(), data.end());
+    return result;
+}
+
+/// Loads a `uint256_t` from a collection of bytes.
+/// The leftmost offset bytes are skipped, and the next 32 bytes are taken.  At least 32 (+offset) bytes are needed.
+inline uint256_t loadWithOffset(const Data& data, size_t offset) {
+    using boost::multiprecision::cpp_int;
+    if (data.empty() || (data.size() < (256/8 + offset))) {
+        // not enough bytes in data
+        return uint256_t(0);
+    }
+    uint256_t result;
+    import_bits(result, data.begin() + offset, data.begin() + offset + 256/8);
     return result;
 }
 
@@ -46,6 +60,21 @@ inline Data store(const uint256_t& v) {
     bytes.reserve(32);
     export_bits(v, std::back_inserter(bytes), 8);
     return bytes;
+}
+
+// Append a uint256_t value as a big-endian byte array into the provided buffer, and limit
+// the array size by digit/8.
+inline void encode256BE(Data &data, const uint256_t &value, uint32_t digit) {
+    Data bytes = store(value);
+    Data buff(digit / 8);
+
+    for (int i = 0; i < (int)bytes.size(); ++i) {
+        int start = (int)buff.size() - (int)bytes.size() + i;
+        if (start >= 0) {
+            buff[start] = bytes[i];
+        }
+    }
+    data.insert(data.end(), buff.begin(), buff.end());
 }
 
 } // namespace TW

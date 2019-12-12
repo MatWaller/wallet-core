@@ -6,33 +6,39 @@
 
 #pragma once
 
-#include "../PublicKey.h"
-#include "../Cosmos/Address.h"
-
-#include <TrustWalletCore/TWHRP.h>
+#include "../Bech32Address.h"
+#include "AddressChecksum.h"
 
 #include <string>
+
+namespace TW::Zilliqa {
+
+/// Zilliqa address is a Bech32Address, with "zil" prefix and Sha2 hash.
+class Address: public Bech32Address {
+public:
+    static const std::string hrp; // HRP_ZILLIQA
+
+    static bool isValid(const std::string addr) { return Bech32Address::isValid(addr, hrp); }
+
+    Address() : Bech32Address(hrp) {}
+
+    /// Initializes an address with a key hash.
+    Address(Data keyHash) : Bech32Address(hrp, keyHash) {}
+
+    /// Initializes an address with a public key.
+    Address(const PublicKey& publicKey) : Bech32Address(hrp, HASHER_SHA2, publicKey) {}
+
+    static bool decode(const std::string& addr, Address& obj_out) {
+        return Bech32Address::decode(addr, obj_out, hrp);
+    }
+};
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wunused-function"
 
-namespace TW::Zilliqa {
-
-  static bool isValidAddress(const std::string& address) {
-    return Cosmos::Address::isValid(address, HRP_ZILLIQA);
-  }
-
-  static Cosmos::Address Address(const PublicKey& publicKey) {
-    const auto hashed = Hash::sha256(publicKey.bytes);
-    auto keyHash = Data(20);
-    std::copy(hashed.end() - 20, hashed.end(), keyHash.begin());
-
-    return Cosmos::Address(HRP_ZILLIQA, keyHash);
-  }
-
-  static Cosmos::Address Address(const Data& keyHash) {
-    return Cosmos::Address(HRP_ZILLIQA, keyHash);
-  }
+static std::string checkSum(const Data &keyHash) {
+    return checksumed(keyHash);
+}
 
 } // namespace TW::Zilliqa
 
@@ -40,5 +46,5 @@ namespace TW::Zilliqa {
 
 /// Wrapper for C interface.
 struct TWZilliqaAddress {
-    TW::Cosmos::Address impl;
+    TW::Zilliqa::Address impl;
 };

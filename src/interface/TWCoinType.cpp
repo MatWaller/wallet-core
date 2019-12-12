@@ -5,6 +5,7 @@
 // file LICENSE at the root of the source code distribution tree.
 
 #include <TrustWalletCore/TWCoinType.h>
+#include <TrustWalletCore/TWHRP.h>
 
 #include "../Coin.h"
 
@@ -46,4 +47,20 @@ TWString *_Nonnull TWCoinTypeDeriveAddress(enum TWCoinType coin, struct TWPrivat
 TWString *_Nonnull TWCoinTypeDeriveAddressFromPublicKey(enum TWCoinType coin, struct TWPublicKey *_Nonnull publicKey) {
     const auto string = TW::deriveAddress(coin, publicKey->impl);
     return TWStringCreateWithUTF8Bytes(string.c_str());
+}
+
+enum TWHRP TWCoinTypeHRP(enum TWCoinType coin) {
+    return TW::hrp(coin);
+}
+
+uint8_t TWCoinTypeP2pkhPrefix(enum TWCoinType coin) {
+    return TW::p2pkhPrefix(coin);
+}
+
+uint8_t TWCoinTypeP2shPrefix(enum TWCoinType coin) {
+    return TW::p2shPrefix(coin);
+}
+
+uint8_t TWCoinTypeStaticPrefix(enum TWCoinType coin) {
+    return TW::staticPrefix(coin);
 }

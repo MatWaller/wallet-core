@@ -20,13 +20,12 @@ public:
     Proto::SigningInput input;
 
     /// Initializes a transaction signer.
-    Signer(Proto::SigningInput&& input) : input(input) {}
+    Signer(Proto::SigningInput&& input);
 
     /// Signs the transaction.
     ///
     /// \returns the transaction signature or an empty vector if there is an error.
-    std::vector<uint8_t> sign() const;
-    std::string signInBase64() const;
+    Data sign() const;
 
     /// Builds the signed transaction.
     ///

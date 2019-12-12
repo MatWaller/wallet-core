@@ -82,13 +82,42 @@ class KeyStoreTests: XCTestCase {
 
     func testUpdateKey() throws {
         let keyStore = try KeyStore(keyDirectory: keyDirectory)
-        let wallet = keyStore.keyWallet!
-        try keyStore.update(wallet: wallet, password: "testpassword", newPassword: "password")
-        let data = wallet.key.decryptPrivateKey(password: "password")
-        let privateKey = PrivateKey(data: data!)
+        let coins = [CoinType.ethereum, .callisto, .poanetwork]
+        let wallet = try keyStore.createWallet(name: "name", password: "password", coins: coins)
 
+        try keyStore.update(wallet: wallet, password: "password", newPassword: "testpassword")
+
+        let savedKeyStore = try KeyStore(keyDirectory: keyDirectory)
+        let savedWallet = savedKeyStore.wallets.first(where: { $0 == wallet })!
+
+        let data = savedWallet.key.decryptPrivateKey(password: "testpassword")
+        let mnemonic = String(data: data!, encoding: .ascii)
+
+        XCTAssertEqual(savedWallet.accounts.count, coins.count)
         XCTAssertNotNil(data)
-        XCTAssertNotNil(privateKey)
+        XCTAssertNotNil(mnemonic)
+        XCTAssert(HDWallet.isValid(mnemonic: mnemonic!))
+        XCTAssertEqual(savedWallet.key.name, "name")
+    }
+
+    func testUpdateName() throws {
+        let keyStore = try KeyStore(keyDirectory: keyDirectory)
+        let coins = [CoinType.ethereum, .callisto, .poanetwork]
+        let wallet = try keyStore.createWallet(name: "name", password: "password", coins: coins)
+
+        try keyStore.update(wallet: wallet, password: "password", newName: "testname")
+
+        let savedKeyStore = try KeyStore(keyDirectory: keyDirectory)
+        let savedWallet = savedKeyStore.wallets.first(where: { $0 == wallet })!
+
+        let data = savedWallet.key.decryptPrivateKey(password: "password")
+        let mnemonic = String(data: data!, encoding: .ascii)
+
+        XCTAssertEqual(savedWallet.accounts.count, coins.count)
+        XCTAssertNotNil(data)
+        XCTAssertNotNil(mnemonic)
+        XCTAssert(HDWallet.isValid(mnemonic: mnemonic!))
+        XCTAssertEqual(savedWallet.key.name, "testname")
     }
 
     func testAddAccounts() throws {
@@ -99,6 +128,19 @@ class KeyStoreTests: XCTestCase {
         let savedKeyStore = try KeyStore(keyDirectory: keyDirectory)
         let savedWallet = savedKeyStore.hdWallet!
         XCTAssertEqual(savedWallet.accounts.count, 3)
+    }
+
+    func testRemoveAccounts() throws {
+        let keyStore = try KeyStore(keyDirectory: keyDirectory)
+        let coins = [CoinType.ethereum, .callisto, .poanetwork, .bitcoin]
+        let wallet = try keyStore.createWallet(name: "name", password: "password", coins: coins)
+
+        _ = try keyStore.removeAccounts(wallet: wallet, coins: coins.dropLast(), password: "password")
+
+        let savedKeyStore = try KeyStore(keyDirectory: keyDirectory)
+        let savedWallet = savedKeyStore.wallets.first(where: { $0 == wallet })!
+        XCTAssertEqual(savedWallet.accounts.count, 1)
+        XCTAssertEqual(savedWallet.accounts[0].coin, coins.last)
     }
 
     func testDeleteKey() throws {
