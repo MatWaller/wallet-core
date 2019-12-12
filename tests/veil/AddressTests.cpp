@@ -1,35 +1,41 @@
-// Copyright © 2017-2019 Trust.
+// Copyright © 2017-2019 Trust Wallet.
 //
 // This file is part of Trust. The full Trust copyright notice, including
 // terms governing use, modification, and redistribution, is contained in the
 // file LICENSE at the root of the source code distribution tree.
 
+#include "HexCoding.h"
+#include "PrivateKey.h"
+#include "PublicKey.h"
+#include "veil/Address.h"
 
-#include "Bech32Address.h"
-
-#include <string>
+#include <gtest/gtest.h>
+#include <TrustWalletCore/TWHDWallet.h>
 
 namespace TW::veil {
-
-/// veil address is a Bech32Address, with "bnb" prefix and HASHER_SHA2_RIPEMD hash
-class Address: public Bech32Address {
-public:
-    static const std::string hrp; // HRP_veil
-
-    static bool isValid(const std::string addr) { return Bech32Address::isValid(addr, hrp); }
-
-    Address() : Bech32Address(hrp) {}
-
-    /// Initializes an address with a key hash.
-    Address(Data keyHash) : Bech32Address(hrp, keyHash) {}
-
-    /// Initializes an address with a public key.
-    Address(const PublicKey& publicKey) : Bech32Address(hrp, HASHER_SHA2_RIPEMD, publicKey) {}
-
-    static bool decode(const std::string& addr, Address& obj_out) {
-        return Bech32Address::decode(addr, obj_out, hrp);
+    TEST(Address, Valid) {
+        ASSERT_TRUE(Address::isValid("bv1u097d5pktha3hr9ncgml5urqnpt47nr07fe7ch"));
     }
-};
 
+    TEST(Address, Invalid) {
+        ASSERT_FALSE(Address::isValid("bnb1grpf0955h0ykzq3ar6nmum7y6gdfl6lxfn46h2"));
+    }
+
+    TEST(Address, veil_FromPublicKey) {
+        auto privateKey = PrivateKey(parse_hex("5f334c90de22f659ff3c170e5b3739512e1e42512e02bb94a908e12166433ffa"));
+        auto publicKeyData = privateKey.getPublicKey(TWPublicKeyTypeSECP256k1);
+        ASSERT_EQ(hex(publicKeyData.bytes.begin(), publicKeyData.bytes.end()), "03bc19c236ea2a995ce639240287da4e9b8bb661f16da6eb1db51d07328fbe0967");
+
+        auto publicKey = PublicKey(publicKeyData);
+        auto address = Address(publicKey);
+        ASSERT_EQ(address.string(), "bv18u3qvjymnustsxc2wz4amzn2fnqkympf90s45z");
+    }
+
+    TEST(Address, veil_Valid) {
+        ASSERT_TRUE(Address::isValid("bv1u097d5pktha3hr9ncgml5urqnpt47nr07fe7ch"));
+    }
+
+    TEST(Address, veil_Invalid) {
+        ASSERT_FALSE(Address::isValid("bvxsk6jryyqjfhp5dhc55tc9jtckygx0eph6dd02"));
+    }
 } // namespace TW::veil
-
