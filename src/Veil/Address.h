@@ -22,7 +22,7 @@ class Address: public Bech32Address {
     static bool isValid(const std::string addr) { return Bech32Address::isValid(addr, hrp); }
 
 
-    Address() : Bech32Address("") {}
+    Address() : Bech32Address(hrp) {}
 
     Address(Data keyHash) : Bech32Address(hrp, keyHash) {}
 
