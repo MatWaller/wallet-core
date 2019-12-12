@@ -1329,7 +1329,7 @@ CMakeFiles/TrustWalletCore.dir/src/Coin.cpp.o
  /waller-core/src/Zcash/TAddress.h
  /waller-core/src/Zilliqa/Address.h
  /waller-core/src/Zilliqa/AddressChecksum.h
- /waller-core/src/veil/Address.h
+ /waller-core/src/Veil/Address.h
  include/TrustWalletCore/TWBase.h
  include/TrustWalletCore/TWBlockchain.h
  include/TrustWalletCore/TWCoinType.h
@@ -9693,13 +9693,13 @@ CMakeFiles/TrustWalletCore.dir/src/proto/Zilliqa.pb.cc.o
  build/local/include/google/protobuf/unknown_field_set.h
  build/local/include/google/protobuf/wire_format.h
  build/local/include/google/protobuf/wire_format_lite.h
-CMakeFiles/TrustWalletCore.dir/src/veil/Address.cpp.o
+CMakeFiles/TrustWalletCore.dir/src/Veil/Address.cpp.o
  /waller-core/src/Bech32Address.h
  /waller-core/src/Data.h
  /waller-core/src/Hash.h
  /waller-core/src/PublicKey.h
- /waller-core/src/veil/Address.cpp
- /waller-core/src/veil/Address.h
+ /waller-core/src/Veil/Address.cpp
+ /waller-core/src/Veil/Address.h
  include/TrustWalletCore/TWBase.h
  include/TrustWalletCore/TWHRP.h
  include/TrustWalletCore/TWPublicKeyType.h
@@ -9709,15 +9709,15 @@ CMakeFiles/TrustWalletCore.dir/src/veil/Address.cpp.o
  trezor-crypto/include/TrezorCrypto/hasher.h
  trezor-crypto/include/TrezorCrypto/sha2.h
  trezor-crypto/include/TrezorCrypto/sha3.h
-CMakeFiles/TrustWalletCore.dir/src/veil/Signer.cpp.o
+CMakeFiles/TrustWalletCore.dir/src/Veil/Signer.cpp.o
  /waller-core/src/Bech32Address.h
  /waller-core/src/Data.h
  /waller-core/src/Hash.h
  /waller-core/src/PrivateKey.h
  /waller-core/src/PublicKey.h
- /waller-core/src/veil/Address.h
- /waller-core/src/veil/Signer.cpp
- /waller-core/src/veil/Signer.h
+ /waller-core/src/Veil/Address.h
+ /waller-core/src/Veil/Signer.cpp
+ /waller-core/src/Veil/Signer.h
  include/TrustWalletCore/TWBase.h
  include/TrustWalletCore/TWCurve.h
  include/TrustWalletCore/TWPublicKeyType.h

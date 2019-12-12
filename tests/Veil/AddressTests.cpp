@@ -5,44 +5,35 @@
 // file LICENSE at the root of the source code distribution tree.
 
 #include "HexCoding.h"
-#include "Veil/Address.h"
-#include "PublicKey.h"
 #include "PrivateKey.h"
+#include "PublicKey.h"
+#include "Veil/Address.h"
+
 #include <gtest/gtest.h>
-#include <vector>
+#include <TrustWalletCore/TWHDWallet.h>
 
 using namespace TW;
 using namespace TW::Veil;
 
-TEST(VeilAddress, Valid) {
-    ASSERT_TRUE(Address::isValid("__ADD_VALID_ADDRESS_HERE__"));
+TEST(Address, veil_FromPublicKey) {
 
-    // TODO: Add more tests
-}
+    auto privateKey = PrivateKey(parse_hex("5f334c90de22f659ff3c170e5b3739512e1e42512e02bb94a908e12166433ffa"));
 
-TEST(VeilAddress, Invalid) {
-    ASSERT_FALSE(Address::isValid("__ADD_INVALID_ADDRESS_HERE__"));
+    auto publicKeyData = privateKey.getPublicKey(TWPublicKeyTypeSECP256k1);
 
-    // TODO: Add more tests
-}
+    ASSERT_EQ(hex(publicKeyData.bytes.begin(), publicKeyData.bytes.end()), "03bc19c236ea2a995ce639240287da4e9b8bb661f16da6eb1db51d07328fbe0967");
 
-TEST(VeilAddress, FromPrivateKey) {
-    // TODO: Check public key type, finalize implementation
+    auto publicKey = PublicKey(publicKeyData);
 
-    auto privateKey = PrivateKey(parse_hex("__PRIVATE_KEY_DATA__"));
-    auto address = Address(privateKey.getPublicKey(TWPublicKeyTypeED25519));
-    ASSERT_EQ(address.string(), "__ADD_RESULTING_ADDRESS_HERE__");
-}
-
-TEST(VeilAddress, FromPublicKey) {
-    // TODO: Check public key type, finalize implementation
-    
-    auto publicKey = PublicKey(parse_hex("__PUBLIC_KEY_DATS__"), TWPublicKeyTypeED25519);
     auto address = Address(publicKey);
-    ASSERT_EQ(address.string(), "__ADD_RESULTING_ADDRESS_HERE__");
+        ASSERT_EQ(address.string(), "bv18u3qvjymnustsxc2wz4amzn2fnqkympf90s45z");
 }
 
-TEST(VeilAddress, FromString) {
-    auto address = Address("__ADD_VALID_ADDRESS_HERE__");
-    ASSERT_EQ(address.string(), "__ADD_SAME_VALID_ADDRESS_HERE__");
+TEST(Address, veil_Valid) {
+    ASSERT_TRUE(Address::isValid("bv1u097d5pktha3hr9ncgml5urqnpt47nr07fe7ch"));
 }
+
+TEST(Address, veil_Invalid) {
+    ASSERT_FALSE(Address::isValid("bvxsk6jryyqjfhp5dhc55tc9jtckygx0eph6dd02"));
+}
+

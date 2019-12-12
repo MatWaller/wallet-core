@@ -37,6 +37,11 @@ enum TWHDVersion {
     // Dogecoin
     TWHDVersionDGUB = 0x02facafd,
     TWHDVersionDGPV = 0x02fac398,
+
+    // Veil
+    TWHDVersionVPUB = 0x0488b21e,
+    TWHDVersionVPRV = 0x0488ade4,
+
 };
 
 TW_EXPORT_PROPERTY

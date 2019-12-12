@@ -5,27 +5,9 @@
 // file LICENSE at the root of the source code distribution tree.
 
 #include "Address.h"
+#include <TrustWalletCore/TWHRP.h>
 
 using namespace TW::Veil;
 
-bool Address::isValid(const std::string& string) {
-    // TODO: Finalize implementation
-    return false;
-}
+const std::string Address::hrp = HRP_VEIL;
 
-Address::Address(const std::string& string) {
-    // TODO: Finalize implementation
-
-    if (!isValid(string)) {
-        throw std::invalid_argument("Invalid address string");
-    }
-}
-
-Address::Address(const PublicKey& publicKey) {
-    // TODO: Finalize implementation
-}
-
-std::string Address::string() const {
-    // TODO: Finalize implementation
-    return "TODO";
-}

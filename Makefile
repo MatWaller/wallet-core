@@ -9614,59 +9614,59 @@ src/proto/Zilliqa.pb.cc.s:
 	$(MAKE) -f CMakeFiles/TrustWalletCore.dir/build.make CMakeFiles/TrustWalletCore.dir/src/proto/Zilliqa.pb.cc.s
 .PHONY : src/proto/Zilliqa.pb.cc.s
 
-src/veil/Address.o: src/veil/Address.cpp.o
+src/Veil/Address.o: src/Veil/Address.cpp.o
 
-.PHONY : src/veil/Address.o
-
-# target to build an object file
-src/veil/Address.cpp.o:
-	$(MAKE) -f CMakeFiles/TrustWalletCore.dir/build.make CMakeFiles/TrustWalletCore.dir/src/veil/Address.cpp.o
-.PHONY : src/veil/Address.cpp.o
-
-src/veil/Address.i: src/veil/Address.cpp.i
-
-.PHONY : src/veil/Address.i
-
-# target to preprocess a source file
-src/veil/Address.cpp.i:
-	$(MAKE) -f CMakeFiles/TrustWalletCore.dir/build.make CMakeFiles/TrustWalletCore.dir/src/veil/Address.cpp.i
-.PHONY : src/veil/Address.cpp.i
-
-src/veil/Address.s: src/veil/Address.cpp.s
-
-.PHONY : src/veil/Address.s
-
-# target to generate assembly for a file
-src/veil/Address.cpp.s:
-	$(MAKE) -f CMakeFiles/TrustWalletCore.dir/build.make CMakeFiles/TrustWalletCore.dir/src/veil/Address.cpp.s
-.PHONY : src/veil/Address.cpp.s
-
-src/veil/Signer.o: src/veil/Signer.cpp.o
-
-.PHONY : src/veil/Signer.o
+.PHONY : src/Veil/Address.o
 
 # target to build an object file
-src/veil/Signer.cpp.o:
-	$(MAKE) -f CMakeFiles/TrustWalletCore.dir/build.make CMakeFiles/TrustWalletCore.dir/src/veil/Signer.cpp.o
-.PHONY : src/veil/Signer.cpp.o
+src/Veil/Address.cpp.o:
+	$(MAKE) -f CMakeFiles/TrustWalletCore.dir/build.make CMakeFiles/TrustWalletCore.dir/src/Veil/Address.cpp.o
+.PHONY : src/Veil/Address.cpp.o
 
-src/veil/Signer.i: src/veil/Signer.cpp.i
+src/Veil/Address.i: src/Veil/Address.cpp.i
 
-.PHONY : src/veil/Signer.i
+.PHONY : src/Veil/Address.i
 
 # target to preprocess a source file
-src/veil/Signer.cpp.i:
-	$(MAKE) -f CMakeFiles/TrustWalletCore.dir/build.make CMakeFiles/TrustWalletCore.dir/src/veil/Signer.cpp.i
-.PHONY : src/veil/Signer.cpp.i
+src/Veil/Address.cpp.i:
+	$(MAKE) -f CMakeFiles/TrustWalletCore.dir/build.make CMakeFiles/TrustWalletCore.dir/src/Veil/Address.cpp.i
+.PHONY : src/Veil/Address.cpp.i
 
-src/veil/Signer.s: src/veil/Signer.cpp.s
+src/Veil/Address.s: src/Veil/Address.cpp.s
 
-.PHONY : src/veil/Signer.s
+.PHONY : src/Veil/Address.s
 
 # target to generate assembly for a file
-src/veil/Signer.cpp.s:
-	$(MAKE) -f CMakeFiles/TrustWalletCore.dir/build.make CMakeFiles/TrustWalletCore.dir/src/veil/Signer.cpp.s
-.PHONY : src/veil/Signer.cpp.s
+src/Veil/Address.cpp.s:
+	$(MAKE) -f CMakeFiles/TrustWalletCore.dir/build.make CMakeFiles/TrustWalletCore.dir/src/Veil/Address.cpp.s
+.PHONY : src/Veil/Address.cpp.s
+
+src/Veil/Signer.o: src/Veil/Signer.cpp.o
+
+.PHONY : src/Veil/Signer.o
+
+# target to build an object file
+src/Veil/Signer.cpp.o:
+	$(MAKE) -f CMakeFiles/TrustWalletCore.dir/build.make CMakeFiles/TrustWalletCore.dir/src/Veil/Signer.cpp.o
+.PHONY : src/Veil/Signer.cpp.o
+
+src/Veil/Signer.i: src/Veil/Signer.cpp.i
+
+.PHONY : src/Veil/Signer.i
+
+# target to preprocess a source file
+src/Veil/Signer.cpp.i:
+	$(MAKE) -f CMakeFiles/TrustWalletCore.dir/build.make CMakeFiles/TrustWalletCore.dir/src/Veil/Signer.cpp.i
+.PHONY : src/Veil/Signer.cpp.i
+
+src/Veil/Signer.s: src/Veil/Signer.cpp.s
+
+.PHONY : src/Veil/Signer.s
+
+# target to generate assembly for a file
+src/Veil/Signer.cpp.s:
+	$(MAKE) -f CMakeFiles/TrustWalletCore.dir/build.make CMakeFiles/TrustWalletCore.dir/src/Veil/Signer.cpp.s
+.PHONY : src/Veil/Signer.cpp.s
 
 # Help Target
 help:
@@ -10726,12 +10726,12 @@ help:
 	@echo "... src/proto/Zilliqa.pb.o"
 	@echo "... src/proto/Zilliqa.pb.i"
 	@echo "... src/proto/Zilliqa.pb.s"
-	@echo "... src/veil/Address.o"
-	@echo "... src/veil/Address.i"
-	@echo "... src/veil/Address.s"
-	@echo "... src/veil/Signer.o"
-	@echo "... src/veil/Signer.i"
-	@echo "... src/veil/Signer.s"
+	@echo "... src/Veil/Address.o"
+	@echo "... src/Veil/Address.i"
+	@echo "... src/Veil/Address.s"
+	@echo "... src/Veil/Signer.o"
+	@echo "... src/Veil/Signer.i"
+	@echo "... src/Veil/Signer.s"
 .PHONY : help
 
 

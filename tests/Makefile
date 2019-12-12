@@ -5787,32 +5787,32 @@ interface/TWZilliqaTests.cpp.s:
 	cd /waller-core && $(MAKE) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/interface/TWZilliqaTests.cpp.s
 .PHONY : interface/TWZilliqaTests.cpp.s
 
-interface/TWveilTests.o: interface/TWveilTests.cpp.o
+interface/TWVeilTests.o: interface/TWVeilTests.cpp.o
 
-.PHONY : interface/TWveilTests.o
+.PHONY : interface/TWVeilTests.o
 
 # target to build an object file
-interface/TWveilTests.cpp.o:
-	cd /waller-core && $(MAKE) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/interface/TWveilTests.cpp.o
-.PHONY : interface/TWveilTests.cpp.o
+interface/TWVeilTests.cpp.o:
+	cd /waller-core && $(MAKE) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/interface/TWVeilTests.cpp.o
+.PHONY : interface/TWVeilTests.cpp.o
 
-interface/TWveilTests.i: interface/TWveilTests.cpp.i
+interface/TWVeilTests.i: interface/TWVeilTests.cpp.i
 
-.PHONY : interface/TWveilTests.i
+.PHONY : interface/TWVeilTests.i
 
 # target to preprocess a source file
-interface/TWveilTests.cpp.i:
-	cd /waller-core && $(MAKE) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/interface/TWveilTests.cpp.i
-.PHONY : interface/TWveilTests.cpp.i
+interface/TWVeilTests.cpp.i:
+	cd /waller-core && $(MAKE) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/interface/TWVeilTests.cpp.i
+.PHONY : interface/TWVeilTests.cpp.i
 
-interface/TWveilTests.s: interface/TWveilTests.cpp.s
+interface/TWVeilTests.s: interface/TWVeilTests.cpp.s
 
-.PHONY : interface/TWveilTests.s
+.PHONY : interface/TWVeilTests.s
 
 # target to generate assembly for a file
-interface/TWveilTests.cpp.s:
-	cd /waller-core && $(MAKE) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/interface/TWveilTests.cpp.s
-.PHONY : interface/TWveilTests.cpp.s
+interface/TWVeilTests.cpp.s:
+	cd /waller-core && $(MAKE) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/interface/TWVeilTests.cpp.s
+.PHONY : interface/TWVeilTests.cpp.s
 
 main.o: main.cpp.o
 
@@ -5841,86 +5841,86 @@ main.cpp.s:
 	cd /waller-core && $(MAKE) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-veil/AddressTests.o: veil/AddressTests.cpp.o
+Veil/AddressTests.o: Veil/AddressTests.cpp.o
 
-.PHONY : veil/AddressTests.o
-
-# target to build an object file
-veil/AddressTests.cpp.o:
-	cd /waller-core && $(MAKE) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/veil/AddressTests.cpp.o
-.PHONY : veil/AddressTests.cpp.o
-
-veil/AddressTests.i: veil/AddressTests.cpp.i
-
-.PHONY : veil/AddressTests.i
-
-# target to preprocess a source file
-veil/AddressTests.cpp.i:
-	cd /waller-core && $(MAKE) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/veil/AddressTests.cpp.i
-.PHONY : veil/AddressTests.cpp.i
-
-veil/AddressTests.s: veil/AddressTests.cpp.s
-
-.PHONY : veil/AddressTests.s
-
-# target to generate assembly for a file
-veil/AddressTests.cpp.s:
-	cd /waller-core && $(MAKE) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/veil/AddressTests.cpp.s
-.PHONY : veil/AddressTests.cpp.s
-
-veil/SignerTests.o: veil/SignerTests.cpp.o
-
-.PHONY : veil/SignerTests.o
+.PHONY : Veil/AddressTests.o
 
 # target to build an object file
-veil/SignerTests.cpp.o:
-	cd /waller-core && $(MAKE) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/veil/SignerTests.cpp.o
-.PHONY : veil/SignerTests.cpp.o
+Veil/AddressTests.cpp.o:
+	cd /waller-core && $(MAKE) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/Veil/AddressTests.cpp.o
+.PHONY : Veil/AddressTests.cpp.o
 
-veil/SignerTests.i: veil/SignerTests.cpp.i
+Veil/AddressTests.i: Veil/AddressTests.cpp.i
 
-.PHONY : veil/SignerTests.i
+.PHONY : Veil/AddressTests.i
 
 # target to preprocess a source file
-veil/SignerTests.cpp.i:
-	cd /waller-core && $(MAKE) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/veil/SignerTests.cpp.i
-.PHONY : veil/SignerTests.cpp.i
+Veil/AddressTests.cpp.i:
+	cd /waller-core && $(MAKE) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/Veil/AddressTests.cpp.i
+.PHONY : Veil/AddressTests.cpp.i
 
-veil/SignerTests.s: veil/SignerTests.cpp.s
+Veil/AddressTests.s: Veil/AddressTests.cpp.s
 
-.PHONY : veil/SignerTests.s
+.PHONY : Veil/AddressTests.s
 
 # target to generate assembly for a file
-veil/SignerTests.cpp.s:
-	cd /waller-core && $(MAKE) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/veil/SignerTests.cpp.s
-.PHONY : veil/SignerTests.cpp.s
+Veil/AddressTests.cpp.s:
+	cd /waller-core && $(MAKE) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/Veil/AddressTests.cpp.s
+.PHONY : Veil/AddressTests.cpp.s
 
-veil/TWCoinTypeTests.o: veil/TWCoinTypeTests.cpp.o
+Veil/SignerTests.o: Veil/SignerTests.cpp.o
 
-.PHONY : veil/TWCoinTypeTests.o
+.PHONY : Veil/SignerTests.o
 
 # target to build an object file
-veil/TWCoinTypeTests.cpp.o:
-	cd /waller-core && $(MAKE) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/veil/TWCoinTypeTests.cpp.o
-.PHONY : veil/TWCoinTypeTests.cpp.o
+Veil/SignerTests.cpp.o:
+	cd /waller-core && $(MAKE) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/Veil/SignerTests.cpp.o
+.PHONY : Veil/SignerTests.cpp.o
 
-veil/TWCoinTypeTests.i: veil/TWCoinTypeTests.cpp.i
+Veil/SignerTests.i: Veil/SignerTests.cpp.i
 
-.PHONY : veil/TWCoinTypeTests.i
+.PHONY : Veil/SignerTests.i
 
 # target to preprocess a source file
-veil/TWCoinTypeTests.cpp.i:
-	cd /waller-core && $(MAKE) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/veil/TWCoinTypeTests.cpp.i
-.PHONY : veil/TWCoinTypeTests.cpp.i
+Veil/SignerTests.cpp.i:
+	cd /waller-core && $(MAKE) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/Veil/SignerTests.cpp.i
+.PHONY : Veil/SignerTests.cpp.i
 
-veil/TWCoinTypeTests.s: veil/TWCoinTypeTests.cpp.s
+Veil/SignerTests.s: Veil/SignerTests.cpp.s
 
-.PHONY : veil/TWCoinTypeTests.s
+.PHONY : Veil/SignerTests.s
 
 # target to generate assembly for a file
-veil/TWCoinTypeTests.cpp.s:
-	cd /waller-core && $(MAKE) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/veil/TWCoinTypeTests.cpp.s
-.PHONY : veil/TWCoinTypeTests.cpp.s
+Veil/SignerTests.cpp.s:
+	cd /waller-core && $(MAKE) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/Veil/SignerTests.cpp.s
+.PHONY : Veil/SignerTests.cpp.s
+
+Veil/TWCoinTypeTests.o: Veil/TWCoinTypeTests.cpp.o
+
+.PHONY : Veil/TWCoinTypeTests.o
+
+# target to build an object file
+Veil/TWCoinTypeTests.cpp.o:
+	cd /waller-core && $(MAKE) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/Veil/TWCoinTypeTests.cpp.o
+.PHONY : Veil/TWCoinTypeTests.cpp.o
+
+Veil/TWCoinTypeTests.i: Veil/TWCoinTypeTests.cpp.i
+
+.PHONY : Veil/TWCoinTypeTests.i
+
+# target to preprocess a source file
+Veil/TWCoinTypeTests.cpp.i:
+	cd /waller-core && $(MAKE) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/Veil/TWCoinTypeTests.cpp.i
+.PHONY : Veil/TWCoinTypeTests.cpp.i
+
+Veil/TWCoinTypeTests.s: Veil/TWCoinTypeTests.cpp.s
+
+.PHONY : Veil/TWCoinTypeTests.s
+
+# target to generate assembly for a file
+Veil/TWCoinTypeTests.cpp.s:
+	cd /waller-core && $(MAKE) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/Veil/TWCoinTypeTests.cpp.s
+.PHONY : Veil/TWCoinTypeTests.cpp.s
 
 # Help Target
 help:
@@ -6559,21 +6559,21 @@ help:
 	@echo "... interface/TWZilliqaTests.o"
 	@echo "... interface/TWZilliqaTests.i"
 	@echo "... interface/TWZilliqaTests.s"
-	@echo "... interface/TWveilTests.o"
-	@echo "... interface/TWveilTests.i"
-	@echo "... interface/TWveilTests.s"
+	@echo "... interface/TWVeilTests.o"
+	@echo "... interface/TWVeilTests.i"
+	@echo "... interface/TWVeilTests.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... veil/AddressTests.o"
-	@echo "... veil/AddressTests.i"
-	@echo "... veil/AddressTests.s"
-	@echo "... veil/SignerTests.o"
-	@echo "... veil/SignerTests.i"
-	@echo "... veil/SignerTests.s"
-	@echo "... veil/TWCoinTypeTests.o"
-	@echo "... veil/TWCoinTypeTests.i"
-	@echo "... veil/TWCoinTypeTests.s"
+	@echo "... Veil/AddressTests.o"
+	@echo "... Veil/AddressTests.i"
+	@echo "... Veil/AddressTests.s"
+	@echo "... Veil/SignerTests.o"
+	@echo "... Veil/SignerTests.i"
+	@echo "... Veil/SignerTests.s"
+	@echo "... Veil/TWCoinTypeTests.o"
+	@echo "... Veil/TWCoinTypeTests.i"
+	@echo "... Veil/TWCoinTypeTests.s"
 .PHONY : help
 
 

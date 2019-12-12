@@ -1336,13 +1336,13 @@
 },
 {
   "directory": "/waller-core",
-  "command": "/usr/bin/clang++   -I/waller-core/build/local/include -I/waller-core/build/protobuf/staging/protobuf-3.9.0/src -I/waller-core/include -I/waller-core/src -I/waller-core/jni/cpp -I/waller-core/trezor-crypto/include   -stdlib=libc++ -fPIC   -Wall -std=gnu++17 -o CMakeFiles/TrustWalletCore.dir/src/veil/Address.cpp.o -c /waller-core/src/veil/Address.cpp",
-  "file": "/waller-core/src/veil/Address.cpp"
+  "command": "/usr/bin/clang++   -I/waller-core/build/local/include -I/waller-core/build/protobuf/staging/protobuf-3.9.0/src -I/waller-core/include -I/waller-core/src -I/waller-core/jni/cpp -I/waller-core/trezor-crypto/include   -stdlib=libc++ -fPIC   -Wall -std=gnu++17 -o CMakeFiles/TrustWalletCore.dir/src/Veil/Address.cpp.o -c /waller-core/src/Veil/Address.cpp",
+  "file": "/waller-core/src/Veil/Address.cpp"
 },
 {
   "directory": "/waller-core",
-  "command": "/usr/bin/clang++   -I/waller-core/build/local/include -I/waller-core/build/protobuf/staging/protobuf-3.9.0/src -I/waller-core/include -I/waller-core/src -I/waller-core/jni/cpp -I/waller-core/trezor-crypto/include   -stdlib=libc++ -fPIC   -Wall -std=gnu++17 -o CMakeFiles/TrustWalletCore.dir/src/veil/Signer.cpp.o -c /waller-core/src/veil/Signer.cpp",
-  "file": "/waller-core/src/veil/Signer.cpp"
+  "command": "/usr/bin/clang++   -I/waller-core/build/local/include -I/waller-core/build/protobuf/staging/protobuf-3.9.0/src -I/waller-core/include -I/waller-core/src -I/waller-core/jni/cpp -I/waller-core/trezor-crypto/include   -stdlib=libc++ -fPIC   -Wall -std=gnu++17 -o CMakeFiles/TrustWalletCore.dir/src/Veil/Signer.cpp.o -c /waller-core/src/Veil/Signer.cpp",
+  "file": "/waller-core/src/Veil/Signer.cpp"
 },
 {
   "directory": "/waller-core",
@@ -3066,8 +3066,8 @@
 },
 {
   "directory": "/waller-core/tests",
-  "command": "/usr/bin/clang++   -I/waller-core/build/local/include -I/waller-core/build/protobuf/staging/protobuf-3.9.0/src -I/waller-core/src -I/waller-core/trezor-crypto/include -I/waller-core/include -isystem /waller-core/build/gtest/staging/googletest-release-1.8.1/googletest/include -isystem /waller-core/build/gtest/staging/googletest-release-1.8.1/googletest   -stdlib=libc++ -fPIE   -Wall -pthread -std=gnu++17 -o CMakeFiles/tests.dir/interface/TWveilTests.cpp.o -c /waller-core/tests/interface/TWveilTests.cpp",
-  "file": "/waller-core/tests/interface/TWveilTests.cpp"
+  "command": "/usr/bin/clang++   -I/waller-core/build/local/include -I/waller-core/build/protobuf/staging/protobuf-3.9.0/src -I/waller-core/src -I/waller-core/trezor-crypto/include -I/waller-core/include -isystem /waller-core/build/gtest/staging/googletest-release-1.8.1/googletest/include -isystem /waller-core/build/gtest/staging/googletest-release-1.8.1/googletest   -stdlib=libc++ -fPIE   -Wall -pthread -std=gnu++17 -o CMakeFiles/tests.dir/interface/TWVeilTests.cpp.o -c /waller-core/tests/interface/TWVeilTests.cpp",
+  "file": "/waller-core/tests/interface/TWVeilTests.cpp"
 },
 {
   "directory": "/waller-core/tests",
@@ -3076,18 +3076,18 @@
 },
 {
   "directory": "/waller-core/tests",
-  "command": "/usr/bin/clang++   -I/waller-core/build/local/include -I/waller-core/build/protobuf/staging/protobuf-3.9.0/src -I/waller-core/src -I/waller-core/trezor-crypto/include -I/waller-core/include -isystem /waller-core/build/gtest/staging/googletest-release-1.8.1/googletest/include -isystem /waller-core/build/gtest/staging/googletest-release-1.8.1/googletest   -stdlib=libc++ -fPIE   -Wall -pthread -std=gnu++17 -o CMakeFiles/tests.dir/veil/AddressTests.cpp.o -c /waller-core/tests/veil/AddressTests.cpp",
-  "file": "/waller-core/tests/veil/AddressTests.cpp"
+  "command": "/usr/bin/clang++   -I/waller-core/build/local/include -I/waller-core/build/protobuf/staging/protobuf-3.9.0/src -I/waller-core/src -I/waller-core/trezor-crypto/include -I/waller-core/include -isystem /waller-core/build/gtest/staging/googletest-release-1.8.1/googletest/include -isystem /waller-core/build/gtest/staging/googletest-release-1.8.1/googletest   -stdlib=libc++ -fPIE   -Wall -pthread -std=gnu++17 -o CMakeFiles/tests.dir/Veil/AddressTests.cpp.o -c /waller-core/tests/Veil/AddressTests.cpp",
+  "file": "/waller-core/tests/Veil/AddressTests.cpp"
 },
 {
   "directory": "/waller-core/tests",
-  "command": "/usr/bin/clang++   -I/waller-core/build/local/include -I/waller-core/build/protobuf/staging/protobuf-3.9.0/src -I/waller-core/src -I/waller-core/trezor-crypto/include -I/waller-core/include -isystem /waller-core/build/gtest/staging/googletest-release-1.8.1/googletest/include -isystem /waller-core/build/gtest/staging/googletest-release-1.8.1/googletest   -stdlib=libc++ -fPIE   -Wall -pthread -std=gnu++17 -o CMakeFiles/tests.dir/veil/SignerTests.cpp.o -c /waller-core/tests/veil/SignerTests.cpp",
-  "file": "/waller-core/tests/veil/SignerTests.cpp"
+  "command": "/usr/bin/clang++   -I/waller-core/build/local/include -I/waller-core/build/protobuf/staging/protobuf-3.9.0/src -I/waller-core/src -I/waller-core/trezor-crypto/include -I/waller-core/include -isystem /waller-core/build/gtest/staging/googletest-release-1.8.1/googletest/include -isystem /waller-core/build/gtest/staging/googletest-release-1.8.1/googletest   -stdlib=libc++ -fPIE   -Wall -pthread -std=gnu++17 -o CMakeFiles/tests.dir/Veil/SignerTests.cpp.o -c /waller-core/tests/Veil/SignerTests.cpp",
+  "file": "/waller-core/tests/Veil/SignerTests.cpp"
 },
 {
   "directory": "/waller-core/tests",
-  "command": "/usr/bin/clang++   -I/waller-core/build/local/include -I/waller-core/build/protobuf/staging/protobuf-3.9.0/src -I/waller-core/src -I/waller-core/trezor-crypto/include -I/waller-core/include -isystem /waller-core/build/gtest/staging/googletest-release-1.8.1/googletest/include -isystem /waller-core/build/gtest/staging/googletest-release-1.8.1/googletest   -stdlib=libc++ -fPIE   -Wall -pthread -std=gnu++17 -o CMakeFiles/tests.dir/veil/TWCoinTypeTests.cpp.o -c /waller-core/tests/veil/TWCoinTypeTests.cpp",
-  "file": "/waller-core/tests/veil/TWCoinTypeTests.cpp"
+  "command": "/usr/bin/clang++   -I/waller-core/build/local/include -I/waller-core/build/protobuf/staging/protobuf-3.9.0/src -I/waller-core/src -I/waller-core/trezor-crypto/include -I/waller-core/include -isystem /waller-core/build/gtest/staging/googletest-release-1.8.1/googletest/include -isystem /waller-core/build/gtest/staging/googletest-release-1.8.1/googletest   -stdlib=libc++ -fPIE   -Wall -pthread -std=gnu++17 -o CMakeFiles/tests.dir/Veil/TWCoinTypeTests.cpp.o -c /waller-core/tests/Veil/TWCoinTypeTests.cpp",
+  "file": "/waller-core/tests/Veil/TWCoinTypeTests.cpp"
 },
 {
   "directory": "/waller-core/tests/googletest-build/googlemock",

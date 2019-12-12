@@ -19,30 +19,30 @@ struct TWPublicKey;
 
 /// Represents a veil address.
 TW_EXPORT_CLASS
-struct TWveilAddress;
+struct TWVeilAddress;
 
 /// Compares two addresses for equality.
 TW_EXPORT_STATIC_METHOD
-bool TWveilAddressEqual(struct TWveilAddress *_Nonnull lhs, struct TWveilAddress *_Nonnull rhs);
+bool TWVeilAddressEqual(struct TWVeilAddress *_Nonnull lhs, struct TWVeilAddress *_Nonnull rhs);
 
 /// Determines if the string is a valid veil address.
 TW_EXPORT_STATIC_METHOD
-bool TWveilAddressIsValidString(TWString *_Nonnull string);
+bool TWVeilAddressIsValidString(TWString *_Nonnull string);
 
 /// Creates an address from a string representaion.
 TW_EXPORT_STATIC_METHOD
-struct TWveilAddress *_Nullable TWveilAddressCreateWithString(TWString *_Nonnull string);
+struct TWVeilAddress *_Nullable TWVeilAddressCreateWithString(TWString *_Nonnull string);
 
 /// Creates an address from a public key.
 TW_EXPORT_STATIC_METHOD
-struct TWveilAddress *_Nonnull TWveilAddressCreateWithPublicKey(struct TWPublicKey *_Nonnull publicKey);
+struct TWVeilAddress *_Nonnull TWVeilAddressCreateWithPublicKey(struct TWPublicKey *_Nonnull publicKey);
 
 /// Delete address object
 TW_EXPORT_METHOD
-void TWveilAddressDelete(struct TWveilAddress *_Nonnull address);
+void TWVeilAddressDelete(struct TWVeilAddress *_Nonnull address);
 
 /// Returns the address string representation.
 TW_EXPORT_PROPERTY
-TWString *_Nonnull TWveilAddressDescription(struct TWveilAddress *_Nonnull address);
+TWString *_Nonnull TWVeilAddressDescription(struct TWVeilAddress *_Nonnull address);
 
 TW_EXTERN_C_END

@@ -42,7 +42,7 @@
 #include "Zilliqa/Address.h"
 #include "Kusama/Address.h"
 #include "Polkadot/Address.h"
-#include "veil/Address.h"
+#include "Veil/Address.h"
 
 #include <TrustWalletCore/TWHRP.h>
 
@@ -65,7 +65,6 @@ bool TW::validateAddress(TWCoinType coin, const std::string &string) {
     case TWCoinTypeBinance:
         return Binance::Address::isValid(string);
 
-    case TWCoinTypeVeil:
     case TWCoinTypeCosmos:
     case TWCoinTypeTerra:
         return Cosmos::Address::isValid(string, hrp);
@@ -183,6 +182,9 @@ bool TW::validateAddress(TWCoinType coin, const std::string &string) {
     
     case TWCoinTypePolkadot:
         return Polkadot::Address::isValid(string);
+
+    case TWCoinTypeVeil:
+        return Veil::Address::isValid(string);
     }
 }
 
@@ -215,7 +217,6 @@ std::string TW::deriveAddress(TWCoinType coin, const PublicKey &publicKey) {
     case TWCoinTypeBravoCoin:
         return Bravo::Address(publicKey).string();
 
-    case TWCoinTypeVeil:
     case TWCoinTypeCosmos:
     case TWCoinTypeTerra:
         return Cosmos::Address(hrp, publicKey).string();
@@ -318,6 +319,9 @@ std::string TW::deriveAddress(TWCoinType coin, const PublicKey &publicKey) {
 
     case TWCoinTypePolkadot:
         return Polkadot::Address(publicKey).string();
+
+    case TWCoinTypeVeil:
+        return Veil::Address(publicKey).string();
     }
 }
 

@@ -2158,10 +2158,10 @@ TrustWalletCore/TWZilliqaAddress.h
 gtest/gtest.h
 -
 
-/waller-core/tests/interface/TWveilTests.cpp
-TrustWalletCore/TWveilAddress.h
+/waller-core/tests/interface/TWVeilTests.cpp
+TrustWalletCore/TWVeilAddress.h
 -
-TrustWalletCore/TWveilSigner.h
+TrustWalletCore/TWVeilSigner.h
 -
 HexCoding.h
 /waller-core/tests/interface/HexCoding.h
@@ -2170,21 +2170,21 @@ TWTestUtilities.h
 gtest/gtest.h
 -
 
-/waller-core/tests/veil/AddressTests.cpp
+/waller-core/tests/Veil/AddressTests.cpp
 HexCoding.h
-/waller-core/tests/veil/HexCoding.h
+/waller-core/tests/Veil/HexCoding.h
 PrivateKey.h
-/waller-core/tests/veil/PrivateKey.h
+/waller-core/tests/Veil/PrivateKey.h
 PublicKey.h
-/waller-core/tests/veil/PublicKey.h
-veil/Address.h
-/waller-core/tests/veil/veil/Address.h
+/waller-core/tests/Veil/PublicKey.h
+Veil/Address.h
+/waller-core/tests/Veil/Veil/Address.h
 gtest/gtest.h
 -
 TrustWalletCore/TWHDWallet.h
 -
 
-/waller-core/tests/veil/TWCoinTypeTests.cpp
+/waller-core/tests/Veil/TWCoinTypeTests.cpp
 ../interface/TWTestUtilities.h
 /waller-core/tests/interface/TWTestUtilities.h
 TrustWalletCore/TWCoinTypeConfiguration.h
@@ -4242,7 +4242,7 @@ include/TrustWalletCore/TWData.h
 TWString.h
 include/TrustWalletCore/TWString.h
 
-include/TrustWalletCore/TWveilAddress.h
+include/TrustWalletCore/TWVeilAddress.h
 TWBase.h
 include/TrustWalletCore/TWBase.h
 TWData.h
@@ -4252,7 +4252,7 @@ include/TrustWalletCore/TWHRP.h
 TWString.h
 include/TrustWalletCore/TWString.h
 
-include/TrustWalletCore/TWveilSigner.h
+include/TrustWalletCore/TWVeilSigner.h
 TWBase.h
 include/TrustWalletCore/TWBase.h
 
@@ -6240,7 +6240,7 @@ src/Data.h
 boost/multiprecision/cpp_int.hpp
 -
 
-src/veil/Address.h
+src/Veil/Address.h
 ../Bech32Address.h
 src/Bech32Address.h
 ../Data.h

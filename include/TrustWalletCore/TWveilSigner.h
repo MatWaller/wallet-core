@@ -6,16 +6,16 @@
 #pragma once
 
 #include "TWBase.h"
-//#include "TWveilProto.h"
+//#include "TWVeilProto.h"
 
 TW_EXTERN_C_BEGIN
 
 /// Helper class to sign veil transactions.
 TW_EXPORT_CLASS
-struct TWveilSigner;
+struct TWVeilSigner;
 
 /// Signs a transaction.
 //TW_EXPORT_STATIC_METHOD
-//TW_veil_Proto_SigningOutput TWveilSignerSign(TW_veil_Proto_SigningInput input);
+//TW_veil_Proto_SigningOutput TWVeilSignerSign(TW_veil_Proto_SigningInput input);
 
 TW_EXTERN_C_END

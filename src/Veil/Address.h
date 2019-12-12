@@ -6,34 +6,33 @@
 
 #pragma once
 
+#include "../Bech32Address.h"
 #include "../Data.h"
 #include "../PublicKey.h"
 
 #include <string>
 
+
 namespace TW::Veil {
 
-class Address {
+class Address: public Bech32Address {
   public:
-    // TODO: Complete class definition
+    static const std::string hrp; // HRP_veil
 
-    /// Determines whether a string makes a valid address.
-    static bool isValid(const std::string& string);
+    static bool isValid(const std::string addr) { return Bech32Address::isValid(addr, hrp); }
 
-    /// Initializes a Veil address with a string representation.
-    explicit Address(const std::string& string);
 
-    /// Initializes a Veil address with a public key.
-    explicit Address(const PublicKey& publicKey);
+    Address() : Bech32Address("") {}
 
-    /// Returns a string representation of the address.
-    std::string string() const;
+    Address(Data keyHash) : Bech32Address(hrp, keyHash) {}
+
+    Address(const PublicKey& publicKey) : Bech32Address(hrp, HASHER_SHA2_RIPEMD, publicKey) {}
+
+    static bool decode(const std::string& addr, Address& obj_out) {
+        return Bech32Address::decode(addr, obj_out, hrp);
+    }  
 };
 
-inline bool operator==(const Address& lhs, const Address& rhs) {
-    // TODO: Complete equality operator
-    return true;
-}
 
 } // namespace TW::Veil
 
@@ -41,3 +40,4 @@ inline bool operator==(const Address& lhs, const Address& rhs) {
 struct TWVeilAddress {
     TW::Veil::Address impl;
 };
+

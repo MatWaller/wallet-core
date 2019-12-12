@@ -271,8 +271,8 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/waller-core/src/proto/VeChain.pb.cc" "/waller-core/CMakeFiles/TrustWalletCore.dir/src/proto/VeChain.pb.cc.o"
   "/waller-core/src/proto/Waves.pb.cc" "/waller-core/CMakeFiles/TrustWalletCore.dir/src/proto/Waves.pb.cc.o"
   "/waller-core/src/proto/Zilliqa.pb.cc" "/waller-core/CMakeFiles/TrustWalletCore.dir/src/proto/Zilliqa.pb.cc.o"
-  "/waller-core/src/veil/Address.cpp" "/waller-core/CMakeFiles/TrustWalletCore.dir/src/veil/Address.cpp.o"
-  "/waller-core/src/veil/Signer.cpp" "/waller-core/CMakeFiles/TrustWalletCore.dir/src/veil/Signer.cpp.o"
+  "/waller-core/src/Veil/Address.cpp" "/waller-core/CMakeFiles/TrustWalletCore.dir/src/Veil/Address.cpp.o"
+  "/waller-core/src/Veil/Signer.cpp" "/waller-core/CMakeFiles/TrustWalletCore.dir/src/Veil/Signer.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "Clang")
 

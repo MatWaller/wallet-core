@@ -13,7 +13,7 @@
 #include <string>
 
 
-namespace TW::veil {
+namespace TW::Veil {
 
 class Address: public Bech32Address {
   public:
@@ -34,10 +34,10 @@ class Address: public Bech32Address {
 };
 
 
-} // namespace TW::veil
+} // namespace TW::Veil
 
 /// Wrapper for C interface.
-struct TWveilAddress {
-    TW::veil::Address impl;
+struct TWVeilAddress {
+    TW::Veil::Address impl;
 };
 

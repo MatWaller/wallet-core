@@ -715,8 +715,8 @@ Kusama/Address.h
 /waller-core/src/Kusama/Address.h
 Polkadot/Address.h
 /waller-core/src/Polkadot/Address.h
-veil/Address.h
-/waller-core/src/veil/Address.h
+Veil/Address.h
+/waller-core/src/Veil/Address.h
 TrustWalletCore/TWHRP.h
 -
 
@@ -5116,13 +5116,13 @@ Data.h
 boost/multiprecision/cpp_int.hpp
 -
 
-/waller-core/src/veil/Address.cpp
+/waller-core/src/Veil/Address.cpp
 Address.h
-/waller-core/src/veil/Address.h
+/waller-core/src/Veil/Address.h
 TrustWalletCore/TWHRP.h
 -
 
-/waller-core/src/veil/Address.h
+/waller-core/src/Veil/Address.h
 ../Bech32Address.h
 /waller-core/src/Bech32Address.h
 ../Data.h

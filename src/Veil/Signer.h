@@ -11,7 +11,7 @@
 
 namespace TW::Veil {
 
-/// Helper class that performs Veil transaction signing.
+/// Helper class that performs veil transaction signing.
 class Signer {
 public:
     // TODO: Finalize class definition

@@ -266,8 +266,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/TrustWalletCore.dir/src/proto/VeChain.pb.cc.o"
   "CMakeFiles/TrustWalletCore.dir/src/proto/Waves.pb.cc.o"
   "CMakeFiles/TrustWalletCore.dir/src/proto/Zilliqa.pb.cc.o"
-  "CMakeFiles/TrustWalletCore.dir/src/veil/Address.cpp.o"
-  "CMakeFiles/TrustWalletCore.dir/src/veil/Signer.cpp.o"
+  "CMakeFiles/TrustWalletCore.dir/src/Veil/Address.cpp.o"
+  "CMakeFiles/TrustWalletCore.dir/src/Veil/Signer.cpp.o"
   "libTrustWalletCore.pdb"
   "libTrustWalletCore.a"
 )
