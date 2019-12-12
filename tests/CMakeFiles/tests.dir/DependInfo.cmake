@@ -212,11 +212,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/waller-core/tests/interface/TWZelcashTests.cpp" "/waller-core/tests/CMakeFiles/tests.dir/interface/TWZelcashTests.cpp.o"
   "/waller-core/tests/interface/TWZelcashTransactionTests.cpp" "/waller-core/tests/CMakeFiles/tests.dir/interface/TWZelcashTransactionTests.cpp.o"
   "/waller-core/tests/interface/TWZilliqaTests.cpp" "/waller-core/tests/CMakeFiles/tests.dir/interface/TWZilliqaTests.cpp.o"
-  "/waller-core/tests/interface/TWVeilTests.cpp" "/waller-core/tests/CMakeFiles/tests.dir/interface/TWVeilTests.cpp.o"
   "/waller-core/tests/main.cpp" "/waller-core/tests/CMakeFiles/tests.dir/main.cpp.o"
-  "/waller-core/tests/Veil/AddressTests.cpp" "/waller-core/tests/CMakeFiles/tests.dir/Veil/AddressTests.cpp.o"
-  "/waller-core/tests/Veil/SignerTests.cpp" "/waller-core/tests/CMakeFiles/tests.dir/Veil/SignerTests.cpp.o"
-  "/waller-core/tests/Veil/TWCoinTypeTests.cpp" "/waller-core/tests/CMakeFiles/tests.dir/Veil/TWCoinTypeTests.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "Clang")
 

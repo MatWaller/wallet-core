@@ -6725,14 +6725,31 @@ tests/CMakeFiles/tests.dir/Veil/AddressTests.cpp.o
  build/local/include/gtest/internal/gtest-tuple.h
  build/local/include/gtest/internal/gtest-type-util.h
  include/TrustWalletCore/TWBase.h
+ include/TrustWalletCore/TWBlockchain.h
+ include/TrustWalletCore/TWCoinType.h
  include/TrustWalletCore/TWCurve.h
+ include/TrustWalletCore/TWData.h
+ include/TrustWalletCore/TWHDVersion.h
+ include/TrustWalletCore/TWHDWallet.h
+ include/TrustWalletCore/TWHRP.h
+ include/TrustWalletCore/TWPrivateKey.h
+ include/TrustWalletCore/TWPublicKey.h
  include/TrustWalletCore/TWPublicKeyType.h
+ include/TrustWalletCore/TWPurpose.h
+ include/TrustWalletCore/TWString.h
+ src/Bech32Address.h
  src/Data.h
  src/Hash.h
  src/HexCoding.h
  src/PrivateKey.h
  src/PublicKey.h
  src/Veil/Address.h
+ trezor-crypto/include/TrezorCrypto/blake256.h
+ trezor-crypto/include/TrezorCrypto/blake2b.h
+ trezor-crypto/include/TrezorCrypto/groestl.h
+ trezor-crypto/include/TrezorCrypto/hasher.h
+ trezor-crypto/include/TrezorCrypto/sha2.h
+ trezor-crypto/include/TrezorCrypto/sha3.h
 tests/CMakeFiles/tests.dir/Veil/SignerTests.cpp.o
  /waller-core/tests/Veil/SignerTests.cpp
  build/local/include/gtest/gtest-death-test.h
@@ -6760,6 +6777,7 @@ tests/CMakeFiles/tests.dir/Veil/SignerTests.cpp.o
  include/TrustWalletCore/TWBase.h
  include/TrustWalletCore/TWCurve.h
  include/TrustWalletCore/TWPublicKeyType.h
+ src/Bech32Address.h
  src/Data.h
  src/Hash.h
  src/HexCoding.h
@@ -6767,6 +6785,12 @@ tests/CMakeFiles/tests.dir/Veil/SignerTests.cpp.o
  src/PublicKey.h
  src/Veil/Address.h
  src/Veil/Signer.h
+ trezor-crypto/include/TrezorCrypto/blake256.h
+ trezor-crypto/include/TrezorCrypto/blake2b.h
+ trezor-crypto/include/TrezorCrypto/groestl.h
+ trezor-crypto/include/TrezorCrypto/hasher.h
+ trezor-crypto/include/TrezorCrypto/sha2.h
+ trezor-crypto/include/TrezorCrypto/sha3.h
 tests/CMakeFiles/tests.dir/Veil/TWCoinTypeTests.cpp.o
  /waller-core/tests/Veil/TWCoinTypeTests.cpp
  /waller-core/tests/interface/TWTestUtilities.h
@@ -11037,39 +11061,6 @@ tests/CMakeFiles/tests.dir/interface/TWZilliqaTests.cpp.o
  trezor-crypto/include/TrezorCrypto/hasher.h
  trezor-crypto/include/TrezorCrypto/sha2.h
  trezor-crypto/include/TrezorCrypto/sha3.h
-tests/CMakeFiles/tests.dir/interface/TWVeilTests.cpp.o
- /waller-core/tests/interface/TWTestUtilities.h
- /waller-core/tests/interface/TWVeilTests.cpp
- build/local/include/gtest/gtest-death-test.h
- build/local/include/gtest/gtest-message.h
- build/local/include/gtest/gtest-param-test.h
- build/local/include/gtest/gtest-printers.h
- build/local/include/gtest/gtest-test-part.h
- build/local/include/gtest/gtest-typed-test.h
- build/local/include/gtest/gtest.h
- build/local/include/gtest/gtest_pred_impl.h
- build/local/include/gtest/gtest_prod.h
- build/local/include/gtest/internal/custom/gtest-port.h
- build/local/include/gtest/internal/custom/gtest-printers.h
- build/local/include/gtest/internal/gtest-death-test-internal.h
- build/local/include/gtest/internal/gtest-filepath.h
- build/local/include/gtest/internal/gtest-internal.h
- build/local/include/gtest/internal/gtest-linked_ptr.h
- build/local/include/gtest/internal/gtest-param-util-generated.h
- build/local/include/gtest/internal/gtest-param-util.h
- build/local/include/gtest/internal/gtest-port-arch.h
- build/local/include/gtest/internal/gtest-port.h
- build/local/include/gtest/internal/gtest-string.h
- build/local/include/gtest/internal/gtest-tuple.h
- build/local/include/gtest/internal/gtest-type-util.h
- include/TrustWalletCore/TWBase.h
- include/TrustWalletCore/TWData.h
- include/TrustWalletCore/TWHRP.h
- include/TrustWalletCore/TWString.h
- include/TrustWalletCore/TWVeilAddress.h
- include/TrustWalletCore/TWVeilSigner.h
- src/Data.h
- src/HexCoding.h
 tests/CMakeFiles/tests.dir/main.cpp.o
  /waller-core/tests/main.cpp
  build/local/include/gtest/gtest-death-test.h
@@ -11094,132 +11085,3 @@ tests/CMakeFiles/tests.dir/main.cpp.o
  build/local/include/gtest/internal/gtest-string.h
  build/local/include/gtest/internal/gtest-tuple.h
  build/local/include/gtest/internal/gtest-type-util.h
-tests/CMakeFiles/tests.dir/Veil/AddressTests.cpp.o
- /waller-core/tests/Veil/AddressTests.cpp
- build/local/include/gtest/gtest-death-test.h
- build/local/include/gtest/gtest-message.h
- build/local/include/gtest/gtest-param-test.h
- build/local/include/gtest/gtest-printers.h
- build/local/include/gtest/gtest-test-part.h
- build/local/include/gtest/gtest-typed-test.h
- build/local/include/gtest/gtest.h
- build/local/include/gtest/gtest_pred_impl.h
- build/local/include/gtest/gtest_prod.h
- build/local/include/gtest/internal/custom/gtest-port.h
- build/local/include/gtest/internal/custom/gtest-printers.h
- build/local/include/gtest/internal/gtest-death-test-internal.h
- build/local/include/gtest/internal/gtest-filepath.h
- build/local/include/gtest/internal/gtest-internal.h
- build/local/include/gtest/internal/gtest-linked_ptr.h
- build/local/include/gtest/internal/gtest-param-util-generated.h
- build/local/include/gtest/internal/gtest-param-util.h
- build/local/include/gtest/internal/gtest-port-arch.h
- build/local/include/gtest/internal/gtest-port.h
- build/local/include/gtest/internal/gtest-string.h
- build/local/include/gtest/internal/gtest-tuple.h
- build/local/include/gtest/internal/gtest-type-util.h
- include/TrustWalletCore/TWBase.h
- include/TrustWalletCore/TWBlockchain.h
- include/TrustWalletCore/TWCoinType.h
- include/TrustWalletCore/TWCurve.h
- include/TrustWalletCore/TWData.h
- include/TrustWalletCore/TWHDVersion.h
- include/TrustWalletCore/TWHDWallet.h
- include/TrustWalletCore/TWHRP.h
- include/TrustWalletCore/TWPrivateKey.h
- include/TrustWalletCore/TWPublicKey.h
- include/TrustWalletCore/TWPublicKeyType.h
- include/TrustWalletCore/TWPurpose.h
- include/TrustWalletCore/TWString.h
- src/Bech32Address.h
- src/Data.h
- src/Hash.h
- src/HexCoding.h
- src/PrivateKey.h
- src/PublicKey.h
- src/Veil/Address.h
- trezor-crypto/include/TrezorCrypto/blake256.h
- trezor-crypto/include/TrezorCrypto/blake2b.h
- trezor-crypto/include/TrezorCrypto/groestl.h
- trezor-crypto/include/TrezorCrypto/hasher.h
- trezor-crypto/include/TrezorCrypto/sha2.h
- trezor-crypto/include/TrezorCrypto/sha3.h
-tests/CMakeFiles/tests.dir/Veil/SignerTests.cpp.o
- /waller-core/tests/Veil/SignerTests.cpp
- build/local/include/gtest/gtest-death-test.h
- build/local/include/gtest/gtest-message.h
- build/local/include/gtest/gtest-param-test.h
- build/local/include/gtest/gtest-printers.h
- build/local/include/gtest/gtest-test-part.h
- build/local/include/gtest/gtest-typed-test.h
- build/local/include/gtest/gtest.h
- build/local/include/gtest/gtest_pred_impl.h
- build/local/include/gtest/gtest_prod.h
- build/local/include/gtest/internal/custom/gtest-port.h
- build/local/include/gtest/internal/custom/gtest-printers.h
- build/local/include/gtest/internal/gtest-death-test-internal.h
- build/local/include/gtest/internal/gtest-filepath.h
- build/local/include/gtest/internal/gtest-internal.h
- build/local/include/gtest/internal/gtest-linked_ptr.h
- build/local/include/gtest/internal/gtest-param-util-generated.h
- build/local/include/gtest/internal/gtest-param-util.h
- build/local/include/gtest/internal/gtest-port-arch.h
- build/local/include/gtest/internal/gtest-port.h
- build/local/include/gtest/internal/gtest-string.h
- build/local/include/gtest/internal/gtest-tuple.h
- build/local/include/gtest/internal/gtest-type-util.h
- include/TrustWalletCore/TWBase.h
- include/TrustWalletCore/TWCurve.h
- include/TrustWalletCore/TWPublicKeyType.h
- src/Bech32Address.h
- src/Data.h
- src/Hash.h
- src/HexCoding.h
- src/PrivateKey.h
- src/PublicKey.h
- src/Veil/Address.h
- src/Veil/Signer.h
- trezor-crypto/include/TrezorCrypto/blake256.h
- trezor-crypto/include/TrezorCrypto/blake2b.h
- trezor-crypto/include/TrezorCrypto/groestl.h
- trezor-crypto/include/TrezorCrypto/hasher.h
- trezor-crypto/include/TrezorCrypto/sha2.h
- trezor-crypto/include/TrezorCrypto/sha3.h
-tests/CMakeFiles/tests.dir/Veil/TWCoinTypeTests.cpp.o
- /waller-core/tests/interface/TWTestUtilities.h
- /waller-core/tests/Veil/TWCoinTypeTests.cpp
- build/local/include/gtest/gtest-death-test.h
- build/local/include/gtest/gtest-message.h
- build/local/include/gtest/gtest-param-test.h
- build/local/include/gtest/gtest-printers.h
- build/local/include/gtest/gtest-test-part.h
- build/local/include/gtest/gtest-typed-test.h
- build/local/include/gtest/gtest.h
- build/local/include/gtest/gtest_pred_impl.h
- build/local/include/gtest/gtest_prod.h
- build/local/include/gtest/internal/custom/gtest-port.h
- build/local/include/gtest/internal/custom/gtest-printers.h
- build/local/include/gtest/internal/gtest-death-test-internal.h
- build/local/include/gtest/internal/gtest-filepath.h
- build/local/include/gtest/internal/gtest-internal.h
- build/local/include/gtest/internal/gtest-linked_ptr.h
- build/local/include/gtest/internal/gtest-param-util-generated.h
- build/local/include/gtest/internal/gtest-param-util.h
- build/local/include/gtest/internal/gtest-port-arch.h
- build/local/include/gtest/internal/gtest-port.h
- build/local/include/gtest/internal/gtest-string.h
- build/local/include/gtest/internal/gtest-tuple.h
- build/local/include/gtest/internal/gtest-type-util.h
- include/TrustWalletCore/TWBase.h
- include/TrustWalletCore/TWBlockchain.h
- include/TrustWalletCore/TWCoinType.h
- include/TrustWalletCore/TWCoinTypeConfiguration.h
- include/TrustWalletCore/TWCurve.h
- include/TrustWalletCore/TWData.h
- include/TrustWalletCore/TWHDVersion.h
- include/TrustWalletCore/TWHRP.h
- include/TrustWalletCore/TWPrivateKey.h
- include/TrustWalletCore/TWPublicKey.h
- include/TrustWalletCore/TWPublicKeyType.h
- include/TrustWalletCore/TWPurpose.h
- include/TrustWalletCore/TWString.h
