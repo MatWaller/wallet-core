@@ -1,48 +1,35 @@
-// Copyright © 2017-2019 Trust Wallet.
+// Copyright © 2017-2019 Trust.
 //
 // This file is part of Trust. The full Trust copyright notice, including
 // terms governing use, modification, and redistribution, is contained in the
 // file LICENSE at the root of the source code distribution tree.
 
-#include "HexCoding.h"
-#include "veil/Address.h"
-#include "PublicKey.h"
-#include "PrivateKey.h"
-#include <gtest/gtest.h>
-#include <vector>
 
-using namespace TW;
-using namespace TW::veil;
+#include "Bech32Address.h"
 
-TEST(veilAddress, Valid) {
-    ASSERT_TRUE(Address::isValid("__ADD_VALID_ADDRESS_HERE__"));
+#include <string>
 
-    // TODO: Add more tests
-}
+namespace TW::veil {
 
-TEST(veilAddress, Invalid) {
-    ASSERT_FALSE(Address::isValid("__ADD_INVALID_ADDRESS_HERE__"));
+/// veil address is a Bech32Address, with "bnb" prefix and HASHER_SHA2_RIPEMD hash
+class Address: public Bech32Address {
+public:
+    static const std::string hrp; // HRP_veil
 
-    // TODO: Add more tests
-}
+    static bool isValid(const std::string addr) { return Bech32Address::isValid(addr, hrp); }
 
-TEST(veilAddress, FromPrivateKey) {
-    // TODO: Check public key type, finalize implementation
+    Address() : Bech32Address(hrp) {}
 
-    auto privateKey = PrivateKey(parse_hex("__PRIVATE_KEY_DATA__"));
-    auto address = Address(privateKey.getPublicKey(TWPublicKeyTypeED25519));
-    ASSERT_EQ(address.string(), "__ADD_RESULTING_ADDRESS_HERE__");
-}
+    /// Initializes an address with a key hash.
+    Address(Data keyHash) : Bech32Address(hrp, keyHash) {}
 
-TEST(veilAddress, FromPublicKey) {
-    // TODO: Check public key type, finalize implementation
-    
-    auto publicKey = PublicKey(parse_hex("__PUBLIC_KEY_DATS__"), TWPublicKeyTypeED25519);
-    auto address = Address(publicKey);
-    ASSERT_EQ(address.string(), "__ADD_RESULTING_ADDRESS_HERE__");
-}
+    /// Initializes an address with a public key.
+    Address(const PublicKey& publicKey) : Bech32Address(hrp, HASHER_SHA2_RIPEMD, publicKey) {}
 
-TEST(veilAddress, FromString) {
-    auto address = Address("__ADD_VALID_ADDRESS_HERE__");
-    ASSERT_EQ(address.string(), "__ADD_SAME_VALID_ADDRESS_HERE__");
-}
+    static bool decode(const std::string& addr, Address& obj_out) {
+        return Bech32Address::decode(addr, obj_out, hrp);
+    }
+};
+
+} // namespace TW::veil
+

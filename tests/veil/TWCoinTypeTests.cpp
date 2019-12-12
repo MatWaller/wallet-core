@@ -14,16 +14,16 @@
 
 
 TEST(TWveilCoinType, TWCoinType) {
-    auto symbol = WRAPS(TWCoinTypeConfigurationGetSymbol(TWCoinTypeVEIL));
+    auto symbol = WRAPS(TWCoinTypeConfigurationGetSymbol(TWCoinTypeVeil));
     auto txId = TWStringCreateWithUTF8Bytes("123");
-    auto txUrl = WRAPS(TWCoinTypeConfigurationGetTransactionURL(TWCoinTypeVEIL, txId));
-    auto id = WRAPS(TWCoinTypeConfigurationGetID(TWCoinTypeVEIL));
-    auto name = WRAPS(TWCoinTypeConfigurationGetName(TWCoinTypeVEIL));
+    auto txUrl = WRAPS(TWCoinTypeConfigurationGetTransactionURL(TWCoinTypeVeil, txId));
+    auto id = WRAPS(TWCoinTypeConfigurationGetID(TWCoinTypeVeil));
+    auto name = WRAPS(TWCoinTypeConfigurationGetName(TWCoinTypeVeil));
 
-    ASSERT_EQ(TWCoinTypeConfigurationGetDecimals(TWCoinTypeVEIL), 8);
-    ASSERT_EQ(TWBlockchainBitcoin, TWCoinTypeBlockchain(TWCoinTypeVEIL));
-    ASSERT_EQ(0x0, TWCoinTypeP2shPrefix(TWCoinTypeVEIL));
-    ASSERT_EQ(0x0, TWCoinTypeStaticPrefix(TWCoinTypeVEIL));
+    ASSERT_EQ(TWCoinTypeConfigurationGetDecimals(TWCoinTypeVeil), 8);
+    ASSERT_EQ(TWBlockchainBitcoin, TWCoinTypeBlockchain(TWCoinTypeVeil));
+    ASSERT_EQ(0x0, TWCoinTypeP2shPrefix(TWCoinTypeVeil));
+    ASSERT_EQ(0x0, TWCoinTypeStaticPrefix(TWCoinTypeVeil));
     assertStringsEqual(symbol, "Veil");
     assertStringsEqual(txUrl, "https://explorer.veil-project.com/tx/123");
     assertStringsEqual(id, "veil");

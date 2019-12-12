@@ -65,11 +65,11 @@ bool TW::validateAddress(TWCoinType coin, const std::string &string) {
     case TWCoinTypeBinance:
         return Binance::Address::isValid(string);
 
+    case TWCoinTypeVeil:
     case TWCoinTypeCosmos:
     case TWCoinTypeTerra:
         return Cosmos::Address::isValid(string, hrp);
 
-    case TWCoinTypeVEIL:
     case TWCoinTypeBitcoin:
     case TWCoinTypeDigiByte:
     case TWCoinTypeLitecoin:
@@ -198,11 +198,10 @@ std::string TW::deriveAddress(TWCoinType coin, const PublicKey &publicKey) {
     switch (coin) {
     case TWCoinTypeAeternity:
         return Aeternity::Address(publicKey).string();
-
+ 
     case TWCoinTypeBinance:
         return Binance::Address(publicKey).string();
-   
-    case TWCoinTypeVEIL:
+    
     case TWCoinTypeBitcoin:
     case TWCoinTypeDigiByte:
     case TWCoinTypeGroestlcoin:
@@ -216,6 +215,7 @@ std::string TW::deriveAddress(TWCoinType coin, const PublicKey &publicKey) {
     case TWCoinTypeBravoCoin:
         return Bravo::Address(publicKey).string();
 
+    case TWCoinTypeVeil:
     case TWCoinTypeCosmos:
     case TWCoinTypeTerra:
         return Cosmos::Address(hrp, publicKey).string();

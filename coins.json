@@ -1,10 +1,10 @@
 [
     {
         "id": "veil",
-        "name": "veil",
+        "name": "Veil",
         "symbol": "Veil",
         "decimals": 8,
-        "blockchain": "Bitcoin",
+        "blockchain": "Veil",
         "derivationPath": "m/44'/698'/0'/0/0",
         "curve": "secp256k1",
         "publicKeyType": "secp256k1",
@@ -12,12 +12,12 @@
         "base58Hasher": "sha256d",
         "xpub": "xpub",
         "xprv": "xprv",
+        "hrp": "bv",
         "explorer": "https://explorer.veil-project.com/tx/",
         "info": {
-            "url": "https://ethereum.org",
-            "client": "https://github.com/ethereum/go-ethereum",
-            "clientPublic": "https://mainnet.infura.io",
-            "clientDocs": "https://github.com/ethereum/wiki/wiki/JSON-RPC"
+            "url": "https://veil-project.com",
+            "client": "https://github.com/veil-project/veil",
+            "clientDocs": "https://github.com/veil-project/wiki/wiki/JSON-RPC"
         }
     },
     {

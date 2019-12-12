@@ -30,6 +30,7 @@ enum TWHRP {
     TWHRPMonacoin     /* "mona" */,
     TWHRPQtum     /* "qc" */,
     TWHRPTerra     /* "terra" */,
+    TWHRPVeil     /* "bv" */,
     TWHRPViacoin     /* "via" */,
     TWHRPZilliqa     /* "zil" */,
 };
@@ -46,6 +47,7 @@ static const char *_Nonnull HRP_LITECOIN = "ltc";
 static const char *_Nonnull HRP_MONACOIN = "mona";
 static const char *_Nonnull HRP_QTUM = "qc";
 static const char *_Nonnull HRP_TERRA = "terra";
+static const char *_Nonnull HRP_VEIL = "bv";
 static const char *_Nonnull HRP_VIACOIN = "via";
 static const char *_Nonnull HRP_ZILLIQA = "zil";
 

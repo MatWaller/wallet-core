@@ -5,3 +5,9 @@
 // file LICENSE at the root of the source code distribution tree.
 
 #include "Address.h"
+#include <TrustWalletCore/TWHRP.h>
+
+using namespace TW::veil;
+
+const std::string Address::hrp = HRP_VEIL;
+
