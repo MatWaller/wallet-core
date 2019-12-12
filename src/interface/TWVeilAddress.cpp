@@ -6,7 +6,6 @@
 
 #include "../Veil/Address.h"
 
-#include <TrezorCrypto/ecdsa.h>
 #include <TrustWalletCore/TWHash.h>
 #include <TrustWalletCore/TWHRP.h>
 #include <TrustWalletCore/TWPublicKey.h>
