@@ -1,0 +1,1 @@
+/usr/bin/clang++   -stdlib=libc++   CMakeFiles/walletconsole.dir/main.cpp.o  -o walletconsole  -L/waller-core/build/local/lib -Wl,-rpath,/waller-core/build/local/lib lib/libwalletconsolelib.a ../trezor-crypto/libTrezorCrypto.a ../libTrustWalletCore.a ../libprotobuf.a ../trezor-crypto/libTrezorCrypto.a 

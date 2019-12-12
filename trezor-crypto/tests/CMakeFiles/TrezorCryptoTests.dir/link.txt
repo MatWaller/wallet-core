@@ -1,0 +1,1 @@
+/usr/bin/clang    CMakeFiles/TrezorCryptoTests.dir/test_check.c.o  -o TrezorCryptoTests  -L/waller-core/build/local/lib -Wl,-rpath,/waller-core/build/local/lib ../libTrezorCrypto.a -lcheck 

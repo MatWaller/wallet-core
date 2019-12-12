@@ -1,0 +1,98 @@
+# The set of languages for which implicit dependencies are needed:
+set(CMAKE_DEPENDS_LANGUAGES
+  "CXX"
+  )
+# The set of files for implicit dependencies of each language:
+set(CMAKE_DEPENDS_CHECK_CXX
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/any.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/any.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/any.pb.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/any.pb.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/any_lite.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/any_lite.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/api.pb.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/api.pb.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/arena.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/arena.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/compiler/importer.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/compiler/importer.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/compiler/parser.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/compiler/parser.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/descriptor.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/descriptor.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/descriptor.pb.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/descriptor.pb.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/descriptor_database.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/descriptor_database.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/duration.pb.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/duration.pb.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/dynamic_message.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/dynamic_message.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/empty.pb.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/empty.pb.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/extension_set.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/extension_set.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/extension_set_heavy.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/extension_set_heavy.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/field_mask.pb.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/field_mask.pb.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/generated_enum_util.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/generated_enum_util.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/generated_message_reflection.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/generated_message_reflection.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/generated_message_table_driven.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/generated_message_table_driven.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/generated_message_table_driven_lite.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/generated_message_table_driven_lite.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/generated_message_util.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/generated_message_util.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/implicit_weak_message.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/implicit_weak_message.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/io/coded_stream.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/io/coded_stream.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/io/gzip_stream.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/io/gzip_stream.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/io/io_win32.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/io/io_win32.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/io/printer.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/io/printer.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/io/strtod.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/io/strtod.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/io/tokenizer.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/io/tokenizer.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/io/zero_copy_stream.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/io/zero_copy_stream.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/io/zero_copy_stream_impl.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/io/zero_copy_stream_impl.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/io/zero_copy_stream_impl_lite.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/io/zero_copy_stream_impl_lite.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/map_field.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/map_field.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/message.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/message.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/message_lite.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/message_lite.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/parse_context.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/parse_context.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/reflection_ops.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/reflection_ops.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/repeated_field.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/repeated_field.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/service.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/service.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/source_context.pb.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/source_context.pb.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/struct.pb.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/struct.pb.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/stubs/bytestream.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/stubs/bytestream.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/stubs/common.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/stubs/common.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/stubs/int128.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/stubs/int128.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/stubs/status.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/stubs/status.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/stubs/statusor.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/stubs/statusor.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/stubs/stringpiece.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/stubs/stringpiece.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/stubs/stringprintf.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/stubs/stringprintf.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/stubs/structurally_valid.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/stubs/structurally_valid.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/stubs/strutil.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/stubs/strutil.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/stubs/substitute.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/stubs/substitute.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/stubs/time.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/stubs/time.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/text_format.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/text_format.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/timestamp.pb.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/timestamp.pb.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/type.pb.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/type.pb.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/unknown_field_set.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/unknown_field_set.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/util/delimited_message_util.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/util/delimited_message_util.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/util/field_comparator.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/util/field_comparator.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/util/field_mask_util.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/util/field_mask_util.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/util/internal/datapiece.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/util/internal/datapiece.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/util/internal/default_value_objectwriter.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/util/internal/default_value_objectwriter.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/util/internal/error_listener.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/util/internal/error_listener.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/util/internal/field_mask_utility.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/util/internal/field_mask_utility.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/util/internal/json_escaping.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/util/internal/json_escaping.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/util/internal/json_objectwriter.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/util/internal/json_objectwriter.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/util/internal/json_stream_parser.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/util/internal/json_stream_parser.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/util/internal/object_writer.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/util/internal/object_writer.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/util/internal/proto_writer.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/util/internal/proto_writer.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/util/internal/protostream_objectsource.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/util/internal/protostream_objectsource.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/util/internal/protostream_objectwriter.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/util/internal/protostream_objectwriter.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/util/internal/type_info.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/util/internal/type_info.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/util/internal/utility.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/util/internal/utility.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/util/json_util.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/util/json_util.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/util/message_differencer.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/util/message_differencer.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/util/time_util.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/util/time_util.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/util/type_resolver_util.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/util/type_resolver_util.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/wire_format.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/wire_format.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/wire_format_lite.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/wire_format_lite.cc.o"
+  "/waller-core/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/wrappers.pb.cc" "/waller-core/CMakeFiles/protobuf.dir/build/protobuf/staging/protobuf-3.9.0/src/google/protobuf/wrappers.pb.cc.o"
+  )
+set(CMAKE_CXX_COMPILER_ID "Clang")
+
+# The include file search paths:
+set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "build/protobuf/staging/protobuf-3.9.0/src"
+  )
+
+# Targets to which this target links.
+set(CMAKE_TARGET_LINKED_INFO_FILES
+  )
+
+# Fortran module output directory.
+set(CMAKE_Fortran_TARGET_MODULE_DIR "")

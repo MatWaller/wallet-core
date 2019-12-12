@@ -21,7 +21,7 @@ TEST(TWveilCoinType, TWCoinType) {
     auto name = WRAPS(TWCoinTypeConfigurationGetName(TWCoinTypeVeil));
 
     ASSERT_EQ(TWCoinTypeConfigurationGetDecimals(TWCoinTypeVeil), 8);
-    ASSERT_EQ(TWBlockchainBitcoin, TWCoinTypeBlockchain(TWCoinTypeVeil));
+    ASSERT_EQ(TWBlockchainVeil, TWCoinTypeBlockchain(TWCoinTypeVeil));
     ASSERT_EQ(0x0, TWCoinTypeP2shPrefix(TWCoinTypeVeil));
     ASSERT_EQ(0x0, TWCoinTypeStaticPrefix(TWCoinTypeVeil));
     assertStringsEqual(symbol, "Veil");
