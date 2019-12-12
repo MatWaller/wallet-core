@@ -22,7 +22,7 @@ TEST(TWVeilCoinType, TWCoinType) {
 
     ASSERT_EQ(TWCoinTypeConfigurationGetDecimals(TWCoinTypeVeil), 8);
     ASSERT_EQ(TWBlockchainVeil, TWCoinTypeBlockchain(TWCoinTypeVeil));
-    ASSERT_EQ(0x0, TWCoinTypeP2shPrefix(TWCoinTypeVeil));
+    ASSERT_EQ(0x5, TWCoinTypeP2shPrefix(TWCoinTypeVeil));
     ASSERT_EQ(0x0, TWCoinTypeStaticPrefix(TWCoinTypeVeil));
     assertStringsEqual(symbol, "Veil");
     assertStringsEqual(txUrl, "https://explorer.veil-project.com/tx/123");
