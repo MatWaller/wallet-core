@@ -6,6 +6,7 @@
 
 #pragma once
 
+#include "../Bech32Address.h"
 #include "../Data.h"
 #include "../PublicKey.h"
 
@@ -13,21 +14,20 @@
 
 namespace TW::veil {
 
-class Address {
-  public:
-    // TODO: Complete class definition
+class Address: public Bech32Address {
+public:
+    Address() : Bech32Address("") {}
 
-    /// Determines whether a string makes a valid address.
-    static bool isValid(const std::string& string);
+    /// Initializes an address with a key hash.
+    Address(const std::string& hrp, Data keyHash) : Bech32Address(hrp, keyHash) {}
 
-    /// Initializes a veil address with a string representation.
-    explicit Address(const std::string& string);
+    /// Initializes an address with a public key.
+    Address(const std::string& hrp, const PublicKey& publicKey) : Bech32Address(hrp, HASHER_SHA2_RIPEMD, publicKey) {}
 
-    /// Initializes a veil address with a public key.
-    explicit Address(const PublicKey& publicKey);
-
-    /// Returns a string representation of the address.
-    std::string string() const;
+    /// Creates an address object from the given string, if valid.  Returns success.
+    static bool decode(const std::string& addr, Address& obj_out) {
+        return Bech32Address::decode(addr, obj_out, "");
+    }
 };
 
 inline bool operator==(const Address& lhs, const Address& rhs) {
