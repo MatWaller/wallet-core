@@ -2761,22 +2761,9 @@ tests/CMakeFiles/tests.dir/interface/TWZilliqaTests.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tests.dir/interface/TWZilliqaTests.cpp.s"
 	cd /waller-core/tests && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /waller-core/tests/interface/TWZilliqaTests.cpp -o CMakeFiles/tests.dir/interface/TWZilliqaTests.cpp.s
 
-tests/CMakeFiles/tests.dir/interface/TWVeilTests.cpp.o: tests/CMakeFiles/tests.dir/flags.make
-tests/CMakeFiles/tests.dir/interface/TWVeilTests.cpp.o: tests/interface/TWVeilTests.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/waller-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_209) "Building CXX object tests/CMakeFiles/tests.dir/interface/TWVeilTests.cpp.o"
-	cd /waller-core/tests && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tests.dir/interface/TWVeilTests.cpp.o -c /waller-core/tests/interface/TWVeilTests.cpp
-
-tests/CMakeFiles/tests.dir/interface/TWVeilTests.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tests.dir/interface/TWVeilTests.cpp.i"
-	cd /waller-core/tests && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /waller-core/tests/interface/TWVeilTests.cpp > CMakeFiles/tests.dir/interface/TWVeilTests.cpp.i
-
-tests/CMakeFiles/tests.dir/interface/TWVeilTests.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tests.dir/interface/TWVeilTests.cpp.s"
-	cd /waller-core/tests && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /waller-core/tests/interface/TWVeilTests.cpp -o CMakeFiles/tests.dir/interface/TWVeilTests.cpp.s
-
 tests/CMakeFiles/tests.dir/main.cpp.o: tests/CMakeFiles/tests.dir/flags.make
 tests/CMakeFiles/tests.dir/main.cpp.o: tests/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/waller-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_210) "Building CXX object tests/CMakeFiles/tests.dir/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/waller-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_209) "Building CXX object tests/CMakeFiles/tests.dir/main.cpp.o"
 	cd /waller-core/tests && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tests.dir/main.cpp.o -c /waller-core/tests/main.cpp
 
 tests/CMakeFiles/tests.dir/main.cpp.i: cmake_force
@@ -2786,45 +2773,6 @@ tests/CMakeFiles/tests.dir/main.cpp.i: cmake_force
 tests/CMakeFiles/tests.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tests.dir/main.cpp.s"
 	cd /waller-core/tests && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /waller-core/tests/main.cpp -o CMakeFiles/tests.dir/main.cpp.s
-
-tests/CMakeFiles/tests.dir/Veil/AddressTests.cpp.o: tests/CMakeFiles/tests.dir/flags.make
-tests/CMakeFiles/tests.dir/Veil/AddressTests.cpp.o: tests/Veil/AddressTests.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/waller-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_211) "Building CXX object tests/CMakeFiles/tests.dir/Veil/AddressTests.cpp.o"
-	cd /waller-core/tests && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tests.dir/Veil/AddressTests.cpp.o -c /waller-core/tests/Veil/AddressTests.cpp
-
-tests/CMakeFiles/tests.dir/Veil/AddressTests.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tests.dir/Veil/AddressTests.cpp.i"
-	cd /waller-core/tests && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /waller-core/tests/Veil/AddressTests.cpp > CMakeFiles/tests.dir/Veil/AddressTests.cpp.i
-
-tests/CMakeFiles/tests.dir/Veil/AddressTests.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tests.dir/Veil/AddressTests.cpp.s"
-	cd /waller-core/tests && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /waller-core/tests/Veil/AddressTests.cpp -o CMakeFiles/tests.dir/Veil/AddressTests.cpp.s
-
-tests/CMakeFiles/tests.dir/Veil/SignerTests.cpp.o: tests/CMakeFiles/tests.dir/flags.make
-tests/CMakeFiles/tests.dir/Veil/SignerTests.cpp.o: tests/Veil/SignerTests.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/waller-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_212) "Building CXX object tests/CMakeFiles/tests.dir/Veil/SignerTests.cpp.o"
-	cd /waller-core/tests && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tests.dir/Veil/SignerTests.cpp.o -c /waller-core/tests/Veil/SignerTests.cpp
-
-tests/CMakeFiles/tests.dir/Veil/SignerTests.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tests.dir/Veil/SignerTests.cpp.i"
-	cd /waller-core/tests && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /waller-core/tests/Veil/SignerTests.cpp > CMakeFiles/tests.dir/Veil/SignerTests.cpp.i
-
-tests/CMakeFiles/tests.dir/Veil/SignerTests.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tests.dir/Veil/SignerTests.cpp.s"
-	cd /waller-core/tests && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /waller-core/tests/Veil/SignerTests.cpp -o CMakeFiles/tests.dir/Veil/SignerTests.cpp.s
-
-tests/CMakeFiles/tests.dir/Veil/TWCoinTypeTests.cpp.o: tests/CMakeFiles/tests.dir/flags.make
-tests/CMakeFiles/tests.dir/Veil/TWCoinTypeTests.cpp.o: tests/Veil/TWCoinTypeTests.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/waller-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_213) "Building CXX object tests/CMakeFiles/tests.dir/Veil/TWCoinTypeTests.cpp.o"
-	cd /waller-core/tests && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tests.dir/Veil/TWCoinTypeTests.cpp.o -c /waller-core/tests/Veil/TWCoinTypeTests.cpp
-
-tests/CMakeFiles/tests.dir/Veil/TWCoinTypeTests.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tests.dir/Veil/TWCoinTypeTests.cpp.i"
-	cd /waller-core/tests && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /waller-core/tests/Veil/TWCoinTypeTests.cpp > CMakeFiles/tests.dir/Veil/TWCoinTypeTests.cpp.i
-
-tests/CMakeFiles/tests.dir/Veil/TWCoinTypeTests.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tests.dir/Veil/TWCoinTypeTests.cpp.s"
-	cd /waller-core/tests && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /waller-core/tests/Veil/TWCoinTypeTests.cpp -o CMakeFiles/tests.dir/Veil/TWCoinTypeTests.cpp.s
 
 # Object files for target tests
 tests_OBJECTS = \
@@ -3036,11 +2984,7 @@ tests_OBJECTS = \
 "CMakeFiles/tests.dir/interface/TWZelcashTests.cpp.o" \
 "CMakeFiles/tests.dir/interface/TWZelcashTransactionTests.cpp.o" \
 "CMakeFiles/tests.dir/interface/TWZilliqaTests.cpp.o" \
-"CMakeFiles/tests.dir/interface/TWVeilTests.cpp.o" \
-"CMakeFiles/tests.dir/main.cpp.o" \
-"CMakeFiles/tests.dir/Veil/AddressTests.cpp.o" \
-"CMakeFiles/tests.dir/Veil/SignerTests.cpp.o" \
-"CMakeFiles/tests.dir/Veil/TWCoinTypeTests.cpp.o"
+"CMakeFiles/tests.dir/main.cpp.o"
 
 # External object files for target tests
 tests_EXTERNAL_OBJECTS =
@@ -3253,11 +3197,7 @@ tests/tests: tests/CMakeFiles/tests.dir/interface/TWZcashTransactionTests.cpp.o
 tests/tests: tests/CMakeFiles/tests.dir/interface/TWZelcashTests.cpp.o
 tests/tests: tests/CMakeFiles/tests.dir/interface/TWZelcashTransactionTests.cpp.o
 tests/tests: tests/CMakeFiles/tests.dir/interface/TWZilliqaTests.cpp.o
-tests/tests: tests/CMakeFiles/tests.dir/interface/TWVeilTests.cpp.o
 tests/tests: tests/CMakeFiles/tests.dir/main.cpp.o
-tests/tests: tests/CMakeFiles/tests.dir/Veil/AddressTests.cpp.o
-tests/tests: tests/CMakeFiles/tests.dir/Veil/SignerTests.cpp.o
-tests/tests: tests/CMakeFiles/tests.dir/Veil/TWCoinTypeTests.cpp.o
 tests/tests: tests/CMakeFiles/tests.dir/build.make
 tests/tests: tests/googletest-build/googlemock/gtest/libgtest_main.a
 tests/tests: trezor-crypto/libTrezorCrypto.a
@@ -3267,7 +3207,7 @@ tests/tests: libprotobuf.a
 tests/tests: tests/googletest-build/googlemock/gtest/libgtest.a
 tests/tests: trezor-crypto/libTrezorCrypto.a
 tests/tests: tests/CMakeFiles/tests.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/waller-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_214) "Linking CXX executable tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/waller-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_210) "Linking CXX executable tests"
 	cd /waller-core/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/tests.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

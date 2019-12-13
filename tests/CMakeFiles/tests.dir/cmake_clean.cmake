@@ -207,11 +207,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/tests.dir/interface/TWZelcashTests.cpp.o"
   "CMakeFiles/tests.dir/interface/TWZelcashTransactionTests.cpp.o"
   "CMakeFiles/tests.dir/interface/TWZilliqaTests.cpp.o"
-  "CMakeFiles/tests.dir/interface/TWVeilTests.cpp.o"
   "CMakeFiles/tests.dir/main.cpp.o"
-  "CMakeFiles/tests.dir/Veil/AddressTests.cpp.o"
-  "CMakeFiles/tests.dir/Veil/SignerTests.cpp.o"
-  "CMakeFiles/tests.dir/Veil/TWCoinTypeTests.cpp.o"
   "tests.pdb"
   "tests"
 )

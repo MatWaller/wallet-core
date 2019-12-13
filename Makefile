@@ -9614,60 +9614,6 @@ src/proto/Zilliqa.pb.cc.s:
 	$(MAKE) -f CMakeFiles/TrustWalletCore.dir/build.make CMakeFiles/TrustWalletCore.dir/src/proto/Zilliqa.pb.cc.s
 .PHONY : src/proto/Zilliqa.pb.cc.s
 
-src/Veil/Address.o: src/Veil/Address.cpp.o
-
-.PHONY : src/Veil/Address.o
-
-# target to build an object file
-src/Veil/Address.cpp.o:
-	$(MAKE) -f CMakeFiles/TrustWalletCore.dir/build.make CMakeFiles/TrustWalletCore.dir/src/Veil/Address.cpp.o
-.PHONY : src/Veil/Address.cpp.o
-
-src/Veil/Address.i: src/Veil/Address.cpp.i
-
-.PHONY : src/Veil/Address.i
-
-# target to preprocess a source file
-src/Veil/Address.cpp.i:
-	$(MAKE) -f CMakeFiles/TrustWalletCore.dir/build.make CMakeFiles/TrustWalletCore.dir/src/Veil/Address.cpp.i
-.PHONY : src/Veil/Address.cpp.i
-
-src/Veil/Address.s: src/Veil/Address.cpp.s
-
-.PHONY : src/Veil/Address.s
-
-# target to generate assembly for a file
-src/Veil/Address.cpp.s:
-	$(MAKE) -f CMakeFiles/TrustWalletCore.dir/build.make CMakeFiles/TrustWalletCore.dir/src/Veil/Address.cpp.s
-.PHONY : src/Veil/Address.cpp.s
-
-src/Veil/Signer.o: src/Veil/Signer.cpp.o
-
-.PHONY : src/Veil/Signer.o
-
-# target to build an object file
-src/Veil/Signer.cpp.o:
-	$(MAKE) -f CMakeFiles/TrustWalletCore.dir/build.make CMakeFiles/TrustWalletCore.dir/src/Veil/Signer.cpp.o
-.PHONY : src/Veil/Signer.cpp.o
-
-src/Veil/Signer.i: src/Veil/Signer.cpp.i
-
-.PHONY : src/Veil/Signer.i
-
-# target to preprocess a source file
-src/Veil/Signer.cpp.i:
-	$(MAKE) -f CMakeFiles/TrustWalletCore.dir/build.make CMakeFiles/TrustWalletCore.dir/src/Veil/Signer.cpp.i
-.PHONY : src/Veil/Signer.cpp.i
-
-src/Veil/Signer.s: src/Veil/Signer.cpp.s
-
-.PHONY : src/Veil/Signer.s
-
-# target to generate assembly for a file
-src/Veil/Signer.cpp.s:
-	$(MAKE) -f CMakeFiles/TrustWalletCore.dir/build.make CMakeFiles/TrustWalletCore.dir/src/Veil/Signer.cpp.s
-.PHONY : src/Veil/Signer.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -10726,12 +10672,6 @@ help:
 	@echo "... src/proto/Zilliqa.pb.o"
 	@echo "... src/proto/Zilliqa.pb.i"
 	@echo "... src/proto/Zilliqa.pb.s"
-	@echo "... src/Veil/Address.o"
-	@echo "... src/Veil/Address.i"
-	@echo "... src/Veil/Address.s"
-	@echo "... src/Veil/Signer.o"
-	@echo "... src/Veil/Signer.i"
-	@echo "... src/Veil/Signer.s"
 .PHONY : help
 
 

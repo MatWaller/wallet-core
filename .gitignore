@@ -4,20 +4,18 @@
 .
 
 # CMake Related
+CMakeFiles/
 CMakeLists.txt.user
 CMakeCache.txt
-CMakeFiles
-CMakeScripts
-Testing
+CMakeScripts/
 Makefile
 cmake_install.cmake
 install_manifest.txt
 compile_commands.json
 CTestTestfile.cmake
-_deps
+tests/googletest-build/*
 
-
-protobuf-plugin/build
+protobuf-plugin/build/*
 
 # Build directories
 .build/

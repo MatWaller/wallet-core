@@ -3528,32 +3528,6 @@ CMakeFiles/TrustWalletCore.dir/src/proto/Zilliqa.pb.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TrustWalletCore.dir/src/proto/Zilliqa.pb.cc.s"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /waller-core/src/proto/Zilliqa.pb.cc -o CMakeFiles/TrustWalletCore.dir/src/proto/Zilliqa.pb.cc.s
 
-CMakeFiles/TrustWalletCore.dir/src/Veil/Address.cpp.o: CMakeFiles/TrustWalletCore.dir/flags.make
-CMakeFiles/TrustWalletCore.dir/src/Veil/Address.cpp.o: src/Veil/Address.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/waller-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_268) "Building CXX object CMakeFiles/TrustWalletCore.dir/src/Veil/Address.cpp.o"
-	/usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TrustWalletCore.dir/src/Veil/Address.cpp.o -c /waller-core/src/Veil/Address.cpp
-
-CMakeFiles/TrustWalletCore.dir/src/Veil/Address.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TrustWalletCore.dir/src/Veil/Address.cpp.i"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /waller-core/src/Veil/Address.cpp > CMakeFiles/TrustWalletCore.dir/src/Veil/Address.cpp.i
-
-CMakeFiles/TrustWalletCore.dir/src/Veil/Address.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TrustWalletCore.dir/src/Veil/Address.cpp.s"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /waller-core/src/Veil/Address.cpp -o CMakeFiles/TrustWalletCore.dir/src/Veil/Address.cpp.s
-
-CMakeFiles/TrustWalletCore.dir/src/Veil/Signer.cpp.o: CMakeFiles/TrustWalletCore.dir/flags.make
-CMakeFiles/TrustWalletCore.dir/src/Veil/Signer.cpp.o: src/Veil/Signer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/waller-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_269) "Building CXX object CMakeFiles/TrustWalletCore.dir/src/Veil/Signer.cpp.o"
-	/usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TrustWalletCore.dir/src/Veil/Signer.cpp.o -c /waller-core/src/Veil/Signer.cpp
-
-CMakeFiles/TrustWalletCore.dir/src/Veil/Signer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TrustWalletCore.dir/src/Veil/Signer.cpp.i"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /waller-core/src/Veil/Signer.cpp > CMakeFiles/TrustWalletCore.dir/src/Veil/Signer.cpp.i
-
-CMakeFiles/TrustWalletCore.dir/src/Veil/Signer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TrustWalletCore.dir/src/Veil/Signer.cpp.s"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /waller-core/src/Veil/Signer.cpp -o CMakeFiles/TrustWalletCore.dir/src/Veil/Signer.cpp.s
-
 # Object files for target TrustWalletCore
 TrustWalletCore_OBJECTS = \
 "CMakeFiles/TrustWalletCore.dir/src/Aeternity/Address.cpp.o" \
@@ -3822,9 +3796,7 @@ TrustWalletCore_OBJECTS = \
 "CMakeFiles/TrustWalletCore.dir/src/proto/Tron.pb.cc.o" \
 "CMakeFiles/TrustWalletCore.dir/src/proto/VeChain.pb.cc.o" \
 "CMakeFiles/TrustWalletCore.dir/src/proto/Waves.pb.cc.o" \
-"CMakeFiles/TrustWalletCore.dir/src/proto/Zilliqa.pb.cc.o" \
-"CMakeFiles/TrustWalletCore.dir/src/Veil/Address.cpp.o" \
-"CMakeFiles/TrustWalletCore.dir/src/Veil/Signer.cpp.o"
+"CMakeFiles/TrustWalletCore.dir/src/proto/Zilliqa.pb.cc.o"
 
 # External object files for target TrustWalletCore
 TrustWalletCore_EXTERNAL_OBJECTS =
@@ -4096,11 +4068,9 @@ libTrustWalletCore.a: CMakeFiles/TrustWalletCore.dir/src/proto/Tron.pb.cc.o
 libTrustWalletCore.a: CMakeFiles/TrustWalletCore.dir/src/proto/VeChain.pb.cc.o
 libTrustWalletCore.a: CMakeFiles/TrustWalletCore.dir/src/proto/Waves.pb.cc.o
 libTrustWalletCore.a: CMakeFiles/TrustWalletCore.dir/src/proto/Zilliqa.pb.cc.o
-libTrustWalletCore.a: CMakeFiles/TrustWalletCore.dir/src/Veil/Address.cpp.o
-libTrustWalletCore.a: CMakeFiles/TrustWalletCore.dir/src/Veil/Signer.cpp.o
 libTrustWalletCore.a: CMakeFiles/TrustWalletCore.dir/build.make
 libTrustWalletCore.a: CMakeFiles/TrustWalletCore.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/waller-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_270) "Linking CXX static library libTrustWalletCore.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/waller-core/CMakeFiles --progress-num=$(CMAKE_PROGRESS_268) "Linking CXX static library libTrustWalletCore.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/TrustWalletCore.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/TrustWalletCore.dir/link.txt --verbose=$(VERBOSE)
 
