@@ -64,6 +64,8 @@ TEST(Coin, DeriveAddress) {
     EXPECT_EQ(TW::deriveAddress(TWCoinTypeTON, privateKey), "EQDww_SOMx3CT30jzaDPDuWkGaHjo8zQULH75spBGszlINDK");
     EXPECT_EQ(TW::deriveAddress(TWCoinTypeKusama, privateKey), "Hy8mqcexg5FMwMYnQvzrUvD723qMxDjMRU9HdNCnTsMAypY");
     EXPECT_EQ(TW::deriveAddress(TWCoinTypePolkadot, privateKey), "16PpFrXrC6Ko3pYcyMAx6gPMp3mFFaxgyYMt4G5brkgNcSz8");
+    EXPECT_EQ(TW::deriveAddress(TWCoinTypeVeil, privateKey), "bv1vcnh4knvptx6a3ytdrk34g7py8hmf66lfhl6c2");
+
 }
 
 } // namespace TW

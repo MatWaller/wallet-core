@@ -311,4 +311,14 @@ TEST(Coin, validateAddressAlgorand) {
     EXPECT_FALSE(validateAddress(TWCoinTypeAlgorand, "1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2"));
 }
 
+TEST(Coin, validateAddressVeil) {
+    EXPECT_TRUE(validateAddress(TWCoinTypeVeil, "bv1u097d5pktha3hr9ncgml5urqnpt47nr07fe7ch"));
+
+    // wrong checksum
+    EXPECT_FALSE(validateAddress(TWCoinTypeVeil, "bnb1u097d5pktha3hr9ncgml5urqnpt47nr07fe7ch"));
+
+    EXPECT_FALSE(validateAddress(TWCoinTypeVeil, "3939 h171 N3M0 9EJD ET56 4444 02VC X6DU a111"));
+    EXPECT_FALSE(validateAddress(TWCoinTypeVeil, "1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2XX"));
+} 
+
 } // namespace TW

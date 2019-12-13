@@ -27,6 +27,9 @@ TEST(Bech32Address, Valid) {
     ASSERT_TRUE(Bech32Address::isValid("io187wzp08vnhjjpkydnr97qlh8kh0dpkkytfam8j", "io"));
 
     ASSERT_TRUE(Bech32Address::isValid("zil1fwh4ltdguhde9s7nysnp33d5wye6uqpugufkz7", "zil"));
+
+    ASSERT_TRUE(Bech32Address::isValid("bv1qtkyqy9nwgqfqmq2cr6h3wm5wfhh8v2kj4jtvpw", "bv"));
+
 }
 
 TEST(Bech32Address, Invalid) {
@@ -48,10 +51,14 @@ TEST(Bech32Address, Invalid) {
     ASSERT_FALSE(Bech32Address::isValid(""));
     ASSERT_FALSE(Bech32Address::isValid("0x"));
     ASSERT_FALSE(Bech32Address::isValid("91cddcebe846ce4d47712287eee53cf17c2cfb7"));
+    
+    ASSERT_FALSE(Bech32Address::isValid("0bv1qtkyqy9nwgqfqmq2cr6h3wm5wfhh8v2kj4jtvpw"));
+
 }
 
 TEST(Bech32Address, InvalidWrongPrefix) {
     ASSERT_TRUE(Bech32Address::isValid("one1a50tun737ulcvwy0yvve0pvu5skq0kjargvhwe", "one"));
+    ASSERT_FALSE(Bech32Address::isValid("bv1qtkyqy9nwgqfqmq2cr6h3wm5wfhh8v2kj4jtvpw", "BX"));
     ASSERT_FALSE(Bech32Address::isValid("one1a50tun737ulcvwy0yvve0pvu5skq0kjargvhwe", "two"));
 }
 
@@ -77,7 +84,7 @@ TEST(Bech32Address, FromKeyHash) {
         ASSERT_EQ("bnb1ketpmnqsgycqtxnupr6gcerpps0klyryuudz05", address.string());
     }
     {
-        const auto address = Bech32Address("one", parse_hex("0x587c66b4b973a7b231d02ebbc7e7d9f6c5a49ef2"));
+        const auto address = Bech32Address("bv", parse_hex("0x587c66b4b973a7b231d02ebbc7e7d9f6c5a49ef2"));
         ASSERT_EQ("one1tp7xdd9ewwnmyvws96au0e7e7mz6f8hjqr3g3p", address.string());
     }
     {
@@ -161,3 +168,4 @@ TEST(Bech32Address, Prefixes) {
     const auto address3 = Bech32Address("hrpthree", HASHER_SHA2_RIPEMD, publicKey);
     ASSERT_EQ("hrpthree186zwn9h0z9fyvwfqs4jl92cw3kexusm4wuqkvd", address3.string());
 }
+
