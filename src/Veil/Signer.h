@@ -6,27 +6,31 @@
 
 #pragma once
 
+#include "../proto/Cosmos.pb.h"
 #include "../Data.h"
-#include "../PrivateKey.h"
 
 namespace TW::Veil {
 
 /// Helper class that performs Veil transaction signing.
 class Signer {
 public:
-    // TODO: Finalize class definition
+    Proto::SigningInput input;
 
-    /// Hide default constructor
-    Signer() = delete;
+    /// Initializes a transaction signer.
+    Signer(Proto::SigningInput&& input) :input(input) {}
 
-    /// Signs a Proto::SigningInput transaction
-    //static Proto::SigningOutput sign(const Proto::SigningInput& input) noexcept;
+    /// Signs the transaction.
+    ///
+    /// \returns the transaction signature or an empty vector if there is an error.
+    Data sign() const;
 
-    /// Signs the given transaction.
-    //static Data sign(const PrivateKey& privateKey, Transaction& transaction) noexcept;
+    /// Builds the signed transaction.
+    ///
+    /// \returns the signed transaction.
+    Proto::SigningOutput build() const;
 };
 
-} // namespace TW::Veil
+} // namespace
 
 /// Wrapper for C interface.
 struct TWVeilSigner {

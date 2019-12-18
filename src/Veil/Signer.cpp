@@ -5,29 +5,28 @@
 // file LICENSE at the root of the source code distribution tree.
 
 #include "Signer.h"
-#include "Address.h"
-#include "../PublicKey.h"
+#include "../PrivateKey.h"
+#include "Serialization.h"
+
+#include "../Data.h"
+#include "../Hash.h"
 
 using namespace TW;
 using namespace TW::Veil;
 
-/*
-Proto::SigningOutput Signer::sign(const Proto::SigningInput &input) noexcept {
-    // TODO: Check and finalize implementation
-
-    auto protoOutput = Proto::SigningOutput();
-    auto key = PrivateKey(Data(input.private_key().begin(), input.private_key().end()));
-    auto pubkey = key.getPublicKey(TWPublicKeyTypeED25519);
-    auto from = Address(pubkey);
-
-    // ...
-    
-    return protoOutput;
+Data Signer::sign() const {
+    auto key = PrivateKey(input.private_key());
+    auto preimage = signaturePreimage(input).dump();
+    auto hash = Hash::sha256(preimage);
+    auto signature = key.sign(hash, TWCurveSECP256k1);
+    return Data(signature.begin(), signature.end() - 1);
 }
 
-Data Signer::sign(const PrivateKey &privateKey, Transaction &transaction) noexcept {
-    // TODO: Finalize implementation
-
-    return Data();
+Proto::SigningOutput Signer::build() const {
+    auto output = Proto::SigningOutput();
+    auto signature = sign();
+    auto txJson = transactionJSON(input, signature);
+    output.set_json(txJson.dump());
+    output.set_signature(signature.data(), signature.size());
+    return output;
 }
-*/

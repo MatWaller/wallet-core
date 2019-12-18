@@ -7,20 +7,18 @@
 #include <TrustWalletCore/TWVeilSigner.h>
 
 #include "../Veil/Signer.h"
+#include "../proto/Cosmos.pb.h"
 
 using namespace TW;
 using namespace TW::Veil;
 
-/*
 TW_Veil_Proto_SigningOutput TWVeilSignerSign(TW_Veil_Proto_SigningInput data) {
-    // TODO: Finalize implementation
+    Proto::SigningInput input;
+    input.ParseFromArray(TWDataBytes(data), static_cast<int>(TWDataSize(data)));
 
-    //Proto::SigningInput input;
-    //input.ParseFromArray(TWDataBytes(data), static_cast<int>(TWDataSize(data)));
-    //
-    //auto protoOutput = Signer::sign(input);
-    //
-    //auto serialized = protoOutput.SerializeAsString();
-    //return TWDataCreateWithBytes(reinterpret_cast<const uint8_t *>(serialized.data()), serialized.size());
+    auto signer = new TWVeilSigner{ Signer(std::move(input)) };
+    Proto::SigningOutput output = signer->impl.build();
+
+    auto serialized = output.SerializeAsString();
+    return TWDataCreateWithBytes(reinterpret_cast<const uint8_t *>(serialized.data()), serialized.size());
 }
-*/
