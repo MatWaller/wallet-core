@@ -7,6 +7,6 @@
 #include "Address.h"
 #include <TrustWalletCore/TWHRP.h>
 
-using namespace TW::veil;
+using namespace TW::Veil;
 
 const std::string Address::hrp = HRP_VEIL;
