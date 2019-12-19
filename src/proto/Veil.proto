@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package TW.Bitcoin.Proto;
+package TW.Veil.Proto;
 option java_package = "wallet.core.jni.proto";
 
 message Transaction {
@@ -17,7 +17,7 @@ message Transaction {
     repeated TransactionOutput outputs = 4;
 }
 
-// Bitcoin transaction input.
+// Veil transaction input.
 message TransactionInput {
     // Reference to the previous transaction's output.
     OutPoint previousOutput = 1;
@@ -29,7 +29,7 @@ message TransactionInput {
     bytes script = 3;
 }
 
-// Bitcoin transaction out-point reference.
+// Veil transaction out-point reference.
 message OutPoint {
     // The hash of the referenced transaction.
     bytes hash = 1;
@@ -41,12 +41,12 @@ message OutPoint {
     uint32 sequence = 3;
 }
 
-// Bitcoin transaction output.
+// Veil transaction output.
 message TransactionOutput {
     // Transaction amount.
     int64 value = 1;
 
-    // Usually contains the public key as a Bitcoin script setting up conditions to claim this output.
+    // Usually contains the public key as a Veil script setting up conditions to claim this output.
     bytes script = 2;
 }
 
