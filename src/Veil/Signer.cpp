@@ -6,7 +6,6 @@
 
 #include "Signer.h"
 #include "../PrivateKey.h"
-#include "Serialization.h"
 
 #include "../Data.h"
 #include "../Hash.h"
