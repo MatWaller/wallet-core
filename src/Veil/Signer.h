@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "../proto/Cosmos.pb.h"
+#include "../proto/Veil.pb.h"
 #include "../Data.h"
 
 namespace TW::Veil {
